@@ -75,4 +75,633 @@
       font-size: 14px;
       color: var(--text-soft);
     }
-    .nav-links a:hover
+    .nav-links a:hover {
+      color: var(--accent-main);
+    }
+    .nav-cta {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: 14px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--text-main);
+      border-color: rgba(196,122,44,0.4);
+    }
+    .btn-outline:hover {
+      border-color: var(--accent-main);
+      background: rgba(196,122,44,0.08);
+    }
+    .btn-primary {
+      background: radial-gradient(circle at top, var(--accent-strong), var(--accent-main));
+      color: #050505;
+      border: none;
+      box-shadow: 0 10px 22px var(--glow-amber);
+    }
+    .btn-primary:hover {
+      filter: brightness(1.05);
+      box-shadow: 0 16px 30px rgba(244,183,95,0.45);
+    }
+
+    main { flex: 1; }
+
+    /* HERO */
+    .hero {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 32px;
+      align-items: center;
+    }
+    .hero-kicker {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--accent-strong);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .hero-title {
+      font-size: clamp(28px, 5vw, 40px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+    }
+    .hero-highlight {
+      background: radial-gradient(circle at top, var(--accent-strong), var(--accent-main));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .hero-subtitle {
+      font-size: 15px;
+      color: var(--text-soft);
+      max-width: 32rem;
+      margin-bottom: 18px;
+    }
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .hero-badge {
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(17,13,10,0.9);
+      border: 1px solid var(--border-subtle);
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    .hero-note {
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+
+    /* HERO PREVIEW */
+    .hero-preview {
+      background: radial-gradient(circle at top, #2b1c14, #110c0b);
+      border-radius: 24px;
+      padding: 18px;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.9);
+      border: 1px solid var(--border-subtle);
+      position: relative;
+    }
+    .hero-preview::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: 24px;
+      border: 1px solid rgba(244,183,95,0.2);
+      pointer-events: none;
+    }
+    .preview-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+    .preview-dots {
+      display: flex;
+      gap: 4px;
+    }
+    .preview-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #3b2a1e;
+      box-shadow: 0 0 0 1px #000;
+    }
+
+    .preview-body {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 12px;
+    }
+    .preview-main {
+      background: radial-gradient(circle at top left, #2b1d16, #120e0c);
+      border-radius: 16px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border: 1px solid rgba(87,65,47,0.7);
+    }
+    .preview-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--text-soft);
+    }
+    .preview-input-wrap {
+      border-radius: 12px;
+      padding: 10px;
+      border: 1px solid rgba(87,65,47,0.8);
+      background: rgba(11,8,7,0.95);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .preview-input-label {
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+    .preview-input {
+      font-size: 13px;
+      color: var(--text-main);
+      padding: 6px 8px;
+      border-radius: 9px;
+      border: 1px solid rgba(87,65,47,0.9);
+      background: #0a0706;
+    }
+    .preview-cta-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-top: 4px;
+      flex-wrap: wrap;
+    }
+    .chip {
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(244,183,95,0.08);
+      color: var(--accent-strong);
+      border: 1px solid rgba(244,183,95,0.4);
+    }
+    .preview-status {
+      font-size: 12px;
+      color: var(--text-soft);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 6px rgba(34,197,94,0.7);
+    }
+
+    .preview-video {
+      background: #050406;
+      border-radius: 14px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      color: var(--text-main);
+      font-size: 12px;
+      border: 1px solid rgba(87,65,47,0.9);
+      box-shadow: 0 0 22px rgba(0,0,0,0.9);
+    }
+    .preview-video-screen {
+      border-radius: 10px;
+      border: 1px solid rgba(244,183,95,0.5);
+      height: 180px;
+      background: radial-gradient(circle at 50% 10%, rgba(244,183,95,0.7), #050305);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(248,250,252,0.9);
+    }
+    .preview-video-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .preview-pill {
+      border-radius: 999px;
+      padding: 4px 8px;
+      font-size: 11px;
+      background: rgba(10,7,5,0.95);
+      border: 1px solid rgba(244,183,95,0.45);
+    }
+
+    .preview-secondary {
+      background: rgba(6,4,4,0.96);
+      border-radius: 16px;
+      padding: 12px;
+      font-size: 12px;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border: 1px solid rgba(87,65,47,0.9);
+    }
+    .preview-step {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+    .step-badge {
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      background: rgba(244,183,95,0.15);
+      color: var(--accent-strong);
+      font-size: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      flex-shrink: 0;
+      border: 1px solid rgba(244,183,95,0.6);
+    }
+    .step-text-title {
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .step-text-sub {
+      font-size: 11px;
+      color: var(--text-soft);
+    }
+
+    /* SECTIONS */
+    .section {
+      border-top: 1px solid rgba(46,34,27,0.9);
+      background: radial-gradient(circle at top, #171112, #080607);
+    }
+    .section-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 26px 20px 32px;
+    }
+    .section-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .section-subtitle {
+      font-size: 14px;
+      color: var(--text-soft);
+      max-width: 40rem;
+      margin-bottom: 20px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      font-size: 13px;
+    }
+    .feature-card {
+      border-radius: 14px;
+      border: 1px solid rgba(87,65,47,0.85);
+      background: radial-gradient(circle at top, #221617, #0c0909);
+      padding: 14px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.75);
+    }
+    .feature-title {
+      font-weight: 600;
+      margin-bottom: 4px;
+      font-size: 13px;
+    }
+    .feature-body {
+      color: var(--text-soft);
+      margin-bottom: 8px;
+    }
+    .feature-tag {
+      display: inline-block;
+      font-size: 11px;
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: rgba(244,183,95,0.08);
+      color: var(--accent-strong);
+      border: 1px solid rgba(244,183,95,0.35);
+    }
+
+    footer {
+      border-top: 1px solid rgba(46,34,27,0.95);
+      background: #050405;
+      font-size: 11px;
+      color: var(--text-soft);
+    }
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 18px 20px 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    @media (max-width: 860px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-preview { order: -1; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 640px) {
+      .feature-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero { padding-top: 22px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <!-- Logo from your Icon -->
+        <img src="Icon.jpg" alt="HistoriasReaisApp logo" />
+        <span>HistoriasReaisApp</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#how">How it works</a>
+        <a href="#creators">For creators</a>
+        <a href="#business">For small businesses</a>
+      </nav>
+      <div class="nav-cta">
+        <a href="#demo" class="btn btn-outline">View live demo</a>
+        <a href="#login" class="btn btn-primary">Connect with TikTok</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <div class="hero-kicker">Creator & small business tool</div>
+        <h1 class="hero-title">
+          Turn a simple idea into a
+          <span class="hero-highlight">ready‑to‑post TikTok video</span>.
+        </h1>
+        <p class="hero-subtitle">
+          HistoriasReaisApp is a public-facing web platform that helps creators and small businesses
+          enter an idea, generate a short video, preview the result, and post it to their own TikTok profile.
+        </p>
+        <div class="hero-badges">
+          <span class="hero-badge">Public SaaS platform</span>
+          <span class="hero-badge">For creators & SMBs</span>
+          <span class="hero-badge">Uses official TikTok connection</span>
+        </div>
+        <div class="hero-actions">
+          <a href="#login" class="btn btn-primary">Sign in with TikTok</a>
+          <a href="#how" class="btn btn-outline">See how it works</a>
+        </div>
+        <div class="hero-note">
+          No internal tools or personal-only use. This is a creator tool designed for public use.
+        </div>
+      </div>
+
+      <!-- PREVIEW -->
+      <div class="hero-preview" id="demo">
+        <div class="preview-header">
+          <div class="preview-dots">
+            <div class="preview-dot"></div>
+            <div class="preview-dot"></div>
+            <div class="preview-dot"></div>
+          </div>
+          <span>historiasreais.app · Creator dashboard</span>
+        </div>
+
+        <div class="preview-body">
+          <div class="preview-main">
+            <div class="preview-label">Step 1 · Enter an idea</div>
+            <div class="preview-input-wrap">
+              <div class="preview-input-label">Idea for your next TikTok</div>
+              <div class="preview-input">
+                Launch promo for my new coffee brand
+              </div>
+              <div class="preview-cta-row">
+                <button class="btn btn-primary" style="padding:6px 12px;font-size:12px;">
+                  Generate a short video
+                </button>
+                <span class="chip">Generate a short video</span>
+              </div>
+            </div>
+
+            <div class="preview-label">Step 2 · Preview the result</div>
+            <div class="preview-status">
+              <div class="status-dot"></div>
+              <span>Preview the result before posting.</span>
+            </div>
+
+            <div class="preview-cta-row" style="margin-top:6px;">
+              <button class="btn btn-outline" style="padding:6px 12px;font-size:12px;">
+                Connect TikTok
+              </button>
+              <button class="btn btn-primary" style="padding:6px 12px;font-size:12px;">
+                Post to your TikTok profile
+              </button>
+            </div>
+          </div>
+
+          <div class="preview-secondary">
+            <div class="preview-video">
+              <div class="preview-video-screen">
+                AUTO‑GENERATED SHORT VIDEO PREVIEW
+              </div>
+              <div class="preview-video-meta">
+                <span class="preview-pill">15s · Vertical 9:16</span>
+                <span class="preview-pill">Ready to post</span>
+              </div>
+            </div>
+
+            <div class="preview-step">
+              <div class="step-badge">1</div>
+              <div>
+                <div class="step-text-title">Enter an idea</div>
+                <div class="step-text-sub">
+                  Describe what you want to show in your TikTok.
+                </div>
+              </div>
+            </div>
+
+            <div class="preview-step">
+              <div class="step-badge">2</div>
+              <div>
+                <div class="step-text-title">Generate a short video</div>
+                <div class="step-text-sub">
+                  HistoriasReaisApp creates a viral-style short video automatically.
+                </div>
+              </div>
+            </div>
+
+            <div class="preview-step">
+              <div class="step-badge">3</div>
+              <div>
+                <div class="step-text-title">Connect TikTok & post</div>
+                <div class="step-text-sub">
+                  Connect your own TikTok account and post the video to your TikTok profile.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section" id="how">
+      <div class="section-inner">
+        <h2 class="section-title">How HistoriasReaisApp works</h2>
+        <p class="section-subtitle">
+          The platform is built as a public web app for creators and small businesses. 
+          It does not expose any internal tooling and does not request sensitive personal data on the landing page.
+        </p>
+
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="feature-title">Enter an idea</div>
+            <div class="feature-body">
+              Start with a simple idea such as a launch promo, product teaser, or service recap.
+            </div>
+            <span class="feature-tag">For creators & SMBs</span>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-title">Generate a short video</div>
+            <div class="feature-body">
+              The platform automatically generates a short, vertical video suitable for TikTok.
+            </div>
+            <span class="feature-tag">Short-form content</span>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-title">Preview & post</div>
+            <div class="feature-body">
+              Preview the result, connect your own TikTok account, and post the video to your TikTok profile.
+            </div>
+            <span class="feature-tag">TikTok profile posting</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CREATORS / SMBs -->
+    <section class="section" id="creators">
+      <div class="section-inner">
+        <h2 class="section-title">Built for public creators</h2>
+        <p class="section-subtitle">
+          HistoriasReaisApp is designed for content creators, agencies, and small businesses who want a 
+          straightforward way to create and publish TikTok videos from a browser-based SaaS platform.
+        </p>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="feature-title">Creators</div>
+            <div class="feature-body">
+              Run multiple concepts per week, test ideas, and keep your TikTok profile active with new content.
+            </div>
+            <span class="feature-tag">Public-facing tool</span>
+          </div>
+          <div class="feature-card" id="business">
+            <div class="feature-title">Small businesses</div>
+            <div class="feature-body">
+              Promote launches, seasonal offers, and services without managing complex editing tools.
+            </div>
+            <span class="feature-tag">Business-friendly</span>
+          </div>
+          <div class="feature-card">
+            <div class="feature-title">Agencies & teams</div>
+            <div class="feature-body">
+              Use the platform to create TikTok-ready drafts that clients can publish to their own accounts.
+            </div>
+            <span class="feature-tag">Client workflows</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOGIN / CONNECT -->
+    <section class="section" id="login">
+      <div class="section-inner">
+        <h2 class="section-title">Connect your own TikTok account</h2>
+        <p class="section-subtitle">
+          When fully integrated, HistoriasReaisApp will use the official TikTok developer tools so that creators 
+          and small businesses can securely connect their accounts and post videos to their own profiles.
+        </p>
+        <div class="feature-card" style="max-width:480px;">
+          <div class="feature-title">Example connection flow (demo)</div>
+          <div class="feature-body">
+            This demo layout illustrates where the “Sign in with TikTok” and “Post to TikTok profile” actions will appear in the live product.
+          </div>
+          <button class="btn btn-primary" style="margin-top:8px;">
+            Sign in with TikTok (preview only)
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        © <span id="year"></span> HistoriasReaisApp. All rights reserved.
+      </div>
+      <div class="footer-links">
+        <span>Owned and operated by: Historias Reais</span>
+        <a href="#">Privacy Policy (placeholder)</a>
+        <a href="#">Terms of Use (placeholder)</a>
+        <span>Contact: edurossiter@gmail.com</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
