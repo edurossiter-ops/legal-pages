@@ -141,47 +141,46 @@
       background: linear-gradient(135deg, #1d4ed8, #1e40af);
     }
 
-    /* QUATRO PONTOS PRINCIPAIS – AGORA MAIS FORTES */
+   /* QUATRO PONTOS PRINCIPAIS – COM PROFUNDIDADE */
 
-    .key-strip {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 0;
-      margin-bottom: 40px;
-      border-radius: 20px;
-      overflow: hidden;
-      background: #e0ecff;
-      border: 1px solid #bfdbfe;
-    }
+      .key-strip {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+        margin-bottom: 40px;
+        background: transparent;
+        border: none;
+      }
+      
+      .key-item {
+        padding: 16px 16px 18px;
+        border-radius: 18px;
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        box-shadow: 0 18px 48px rgba(15,23,42,0.16);
+        cursor: default;
+        transition: transform 0.18s ease-out, box-shadow 0.18s ease-out, border-color 0.18s ease-out;
+      }
+      
+      .key-item:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 28px 70px rgba(15,23,42,0.26);
+        border-color: #bfdbfe;
+      }
+      
+      .key-title {
+        font-size: 22px;
+        font-weight: 700;
+        color: #1d4ed8;
+        margin-bottom: 6px;
+      }
+      
+      .key-text {
+        font-size: 15px;
+        color: var(--text-main);
+        opacity: 0.9;
+      }
 
-    .key-item {
-      padding: 14px 16px;
-      border-right: 1px solid rgba(148,163,184,0.4);
-      cursor: default;
-      transition: background 0.15s ease-out, transform 0.15s ease-out;
-    }
-
-    .key-item:last-child {
-      border-right: none;
-    }
-
-    .key-item:hover {
-      background: #d4e4ff;
-      transform: translateY(-1px);
-    }
-
-    .key-title {
-      font-size: 22px;
-      font-weight: 700;
-      color: #1d4ed8;
-      margin-bottom: 4px;
-    }
-
-    .key-text {
-      font-size: 15px;
-      color: var(--text-main);
-      opacity: 0.85;
-    }
 
     /* SEÇÃO SERVIÇOS – TÍTULOS MAIS FORTES */
 
