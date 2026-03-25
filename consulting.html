@@ -16,7 +16,7 @@
       --border-subtle: #e5e7eb;
       --radius-lg: 18px;
       --radius-full: 999px;
-      --shadow-soft: 0 10px 30px rgba(15,23,42,0.08);
+      --shadow-soft: 0 10px 30px rgba(15,23,42,0.10);
       --transition-fast: 0.2s ease-out;
     }
 
@@ -30,8 +30,6 @@
       line-height: 1.6;
     }
 
-    a { color: inherit; text-decoration: none; }
-
     .page {
       min-height: 100vh;
       display: flex;
@@ -41,7 +39,7 @@
 
     .shell {
       width: 100%;
-      max-width: 960px;
+      max-width: 920px;
     }
 
     header {
@@ -49,7 +47,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      margin-bottom: 32px;
+      margin-bottom: 28px;
     }
 
     .brand {
@@ -59,8 +57,8 @@
     }
 
     .brand-logo {
-      width: 36px;
-      height: 36px;
+      width: 38px;
+      height: 38px;
       border-radius: 12px;
       background: linear-gradient(135deg, #2563eb, #60a5fa);
       display: flex;
@@ -73,7 +71,7 @@
     }
 
     .brand-title {
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 600;
     }
 
@@ -94,8 +92,10 @@
       header { flex-direction: column; align-items: flex-start; }
     }
 
+    /* HERO */
+
     .hero {
-      margin-bottom: 32px;
+      margin-bottom: 28px;
     }
 
     .hero-eyebrow {
@@ -107,16 +107,16 @@
     }
 
     .hero-title {
-      font-size: clamp(30px, 4vw, 38px);
-      font-weight: 650;
+      font-size: clamp(32px, 4.2vw, 40px);
+      font-weight: 700;
       line-height: 1.05;
       margin-bottom: 10px;
     }
 
     .hero-subtitle {
-      font-size: 15px;
+      font-size: 16px;
       color: var(--text-muted);
-      max-width: 640px;
+      max-width: 620px;
       margin-bottom: 18px;
     }
 
@@ -135,7 +135,7 @@
     .btn-primary {
       border: none;
       border-radius: var(--radius-full);
-      padding: 11px 20px;
+      padding: 11px 22px;
       font-size: 14px;
       font-weight: 500;
       background: linear-gradient(135deg, #2563eb, #1d4ed8);
@@ -151,87 +151,26 @@
       background: linear-gradient(135deg, #1d4ed8, #1e40af);
     }
 
-    .btn-ghost {
-      border-radius: var(--radius-full);
-      padding: 10px 17px;
-      font-size: 13px;
-      border: 1px solid rgba(191,219,254,0.9);
-      background: #eff6ff;
-      color: #1d4ed8;
-      cursor: pointer;
-      transition: background var(--transition-fast), border-color var(--transition-fast);
-    }
-
-    .btn-ghost:hover {
-      background: #dbeafe;
-      border-color: #93c5fd;
-    }
-
-    .hero-meta {
+    .hero-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
       font-size: 11px;
-      color: var(--text-muted);
-      margin-top: 6px;
+      margin-top: 4px;
     }
 
-    .hero-meta-pill {
+    .hero-tag {
       padding: 4px 10px;
       border-radius: var(--radius-full);
       background: #eff6ff;
       color: #1d4ed8;
     }
 
-    .hero-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-      gap: 24px;
-      align-items: flex-start;
-    }
-
-    @media (max-width: 880px) {
-      .hero-layout { grid-template-columns: minmax(0, 1fr); }
-    }
-
-    .hero-side-card {
-      background: var(--card-bg);
-      border-radius: 20px;
-      padding: 14px 16px 16px;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(226,232,240,0.9);
-    }
-
-    .hero-side-title {
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .hero-side-text {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-    }
-
-    .hero-chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 4px;
-    }
-
-    .hero-chip {
-      font-size: 11px;
-      padding: 4px 9px;
-      border-radius: var(--radius-full);
-      background: #eff6ff;
-      color: #1d4ed8;
-    }
+    /* BLOCO SERVIÇOS PRINCIPAIS */
 
     .section {
       margin-bottom: 28px;
-      padding: 18px 0 0;
+      padding-top: 16px;
       border-top: 1px solid rgba(226,232,240,0.9);
     }
 
@@ -242,48 +181,38 @@
       text-transform: uppercase;
       letter-spacing: 0.18em;
       color: #1d4ed8;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
     .section-lead {
       font-size: 14px;
       color: var(--text-muted);
-      max-width: 640px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
-    .highlight {
-      font-weight: 600;
-      color: var(--text-main);
+    .cards-main {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 10px;
     }
 
-    .bullets {
-      margin-top: 4px;
-      padding-left: 18px;
-      font-size: 14px;
-      color: var(--text-muted);
-    }
-
-    .bullets li { margin-bottom: 3px; }
-
-    .cards-column {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-top: 12px;
+    @media (min-width: 840px) {
+      .cards-main {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      }
     }
 
     .card {
       background: var(--card-bg);
       border-radius: var(--radius-lg);
-      padding: 12px 12px 13px;
+      padding: 14px 14px 15px;
       box-shadow: var(--shadow-soft);
       border: 1px solid rgba(226,232,240,0.9);
       transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
     }
 
     .card:hover {
-      transform: translateY(-2px);
+      transform: translateY(-1px);
       box-shadow: 0 16px 38px rgba(148,163,184,0.35);
       border-color: #bfdbfe;
       background: #f9fafb;
@@ -294,11 +223,11 @@
       text-transform: uppercase;
       letter-spacing: 0.16em;
       color: #93c5fd;
-      margin-bottom: 3px;
+      margin-bottom: 4px;
     }
 
     .card-title {
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 600;
       margin-bottom: 4px;
     }
@@ -306,7 +235,7 @@
     .card-sub {
       font-size: 13px;
       color: var(--text-muted);
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
 
     .card-list {
@@ -315,13 +244,44 @@
       color: var(--text-muted);
     }
 
-    .card-list li { margin-bottom: 2px; }
+    .card-list li { margin-bottom: 3px; }
 
     .card-meta {
       margin-top: 6px;
       font-size: 11px;
       color: var(--text-muted);
     }
+
+    .cards-secondary {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    @media (min-width: 720px) {
+      .cards-secondary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    /* PARA QUEM É */
+
+    .bullets {
+      margin-top: 4px;
+      padding-left: 18px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .bullets li { margin-bottom: 3px; }
+
+    .highlight {
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    /* AUTORIDADE */
 
     .pill-row {
       display: flex;
@@ -391,144 +351,122 @@
         <div class="header-tag">Consultoria independente para pequenas e médias indústrias</div>
       </header>
 
+      <!-- HERO ENXUTO -->
       <section class="hero">
-        <div class="hero-layout">
-          <div>
-            <div class="hero-eyebrow">Consultoria pragmática, focada em resultado</div>
-            <h1 class="hero-title">
-              Consultoria em qualidade para PMEs industriais na Alemanha.
-            </h1>
-            <p class="hero-subtitle">
-              Ajudo pequenas e médias indústrias a reduzir retrabalho, sucata e risco de auditoria com <strong>programas de melhoria contínua e sistemas de gestão simples e eficientes</strong>.
-            </p>
-            <div class="hero-actions">
-              <button class="btn-primary">Agendar conversa de 30 minutos</button>
-              <button class="btn-ghost">Ver serviços completos</button>
-            </div>
-            <div class="hero-meta">
-              <span class="hero-meta-pill">Programas mensais de melhoria contínua</span>
-              <span class="hero-meta-pill">Sistemas ISO 9001 · 14001 · 45001</span>
-              <span class="hero-meta-pill">Foco em pequenas e médias empresas industriais</span>
-            </div>
-          </div>
-          <div>
-            <div class="hero-side-card">
-              <div class="hero-side-title">Quem somos</div>
-              <div class="hero-side-text">
-                Consultoria independente em qualidade e melhoria contínua, especializada em PMEs industriais na Alemanha. Atuamos em sistemas de gestão, Lean Six Sigma e processos críticos, sempre com foco em reduzir custos de não qualidade e riscos de auditoria.
-              </div>
-              <div class="hero-chip-row">
-                <span class="hero-chip">Lean Six Sigma Master Black Belt</span>
-                <span class="hero-chip">Lead Auditor ISO 9001 · 14001 · 45001</span>
-                <span class="hero-chip">M.Sc. em Engenharia de Energia</span>
-                <span class="hero-chip">International Welding Engineer</span>
-              </div>
-            </div>
-          </div>
+        <div class="hero-eyebrow">Para quem quer menos incêndio e mais estabilidade</div>
+        <h1 class="hero-title">
+          Consultoria em qualidade para PMEs industriais na Alemanha.
+        </h1>
+        <p class="hero-subtitle">
+          Ajudo pequenas e médias indústrias a reduzir retrabalho, sucata e risco de auditoria com <strong>programas mensais de melhoria contínua</strong> e <strong>sistemas de gestão ISO simples e eficientes</strong>.
+        </p>
+        <div class="hero-actions">
+          <button class="btn-primary">Agendar conversa de 30 minutos</button>
+        </div>
+        <div class="hero-tags">
+          <span class="hero-tag">Programas mensais de melhoria contínua</span>
+          <span class="hero-tag">ISO 9001 · 14001 · 45001 para PMEs</span>
+          <span class="hero-tag">Diagnóstico rápido da fábrica</span>
         </div>
       </section>
 
+      <!-- SERVIÇOS PRINCIPAIS -->
       <section class="section">
-        <h2 class="section-title">Para quem é</h2>
+        <h2 class="section-title">Principais serviços</h2>
         <p class="section-lead">
-          Trabalhamos com <span class="highlight">pequenas e médias empresas industriais</span> que querem organizar processos, ganhar estabilidade e diminuir custos de não qualidade.
-        </p>
-        <ul class="bullets">
-          <li>Retrabalho, sucata, paradas e atrasos de entrega são frequentes.</li>
-          <li>Reclamações de clientes ou devoluções geram custo e desgaste.</li>
-          <li>ISO 9001/14001/45001 existem (ou estão no plano), mas o sistema não “vive” no dia a dia.</li>
-          <li>Falta tempo e estrutura interna para tocar melhoria contínua com consistência.</li>
-        </ul>
-      </section>
-
-      <section class="section">
-        <h2 class="section-title">Serviços principais (em ordem de importância)</h2>
-        <p class="section-lead">
-          Abaixo estão os serviços estruturados em cinco blocos. Os programas mensais vêm em primeiro lugar porque é neles que normalmente geramos mais resultado para PMEs.
+          Foquei os serviços em cinco blocos – os dois primeiros são onde normalmente geramos mais resultado para PMEs.
         </p>
 
-        <div class="cards-column">
-          <!-- 1) Programas mensais -->
+        <div class="cards-main">
+          <!-- Programas mensais em destaque -->
           <article class="card">
-            <div class="card-label">1 · Programas mensais de melhoria contínua e excelência operacional</div>
+            <div class="card-label">1 · Programas mensais de melhoria contínua</div>
             <h3 class="card-title">Programas de Melhoria Contínua para PMEs</h3>
             <p class="card-sub">
-              Ajudamos sua empresa a construir uma rotina simples de melhoria contínua, com metas claras, foco nos problemas que mais doem e acompanhamento mensal dos resultados.
+              Construímos uma rotina simples de melhoria contínua na sua fábrica, com metas claras e acompanhamento mensal dos resultados.
             </p>
             <ul class="card-list">
-              <li><strong>Programa Essencial (2 dias/mês)</strong> – para organizar a casa sem travar a operação.</li>
-              <li><strong>Programa Intensivo (4 dias/mês)</strong> – para acelerar resultados em áreas críticas.</li>
-              <li>Aplicação prática de Lean Six Sigma em processos industriais.</li>
+              <li><strong>Programa Essencial (2 dias/mês)</strong> – organizar a casa sem travar a operação.</li>
+              <li><strong>Programa Intensivo (4 dias/mês)</strong> – acelerar resultados em áreas críticas.</li>
             </ul>
-            <div class="card-meta">Melhor opção para PMEs que querem impacto consistente ao longo do tempo.</div>
+            <div class="card-meta">Ideal para quem quer impacto consistente ao longo do tempo.</div>
           </article>
 
-          <!-- 2) Sistemas de gestão e auditorias -->
+          <!-- Sistemas ISO e auditorias -->
           <article class="card">
-            <div class="card-label">2 · Sistemas de gestão e auditorias (ISO 9001 · 14001 · 45001)</div>
-            <h3 class="card-title">Sistemas de Gestão Enxutos e Prontos para Auditoria</h3>
+            <div class="card-label">2 · Sistemas de gestão e auditorias</div>
+            <h3 class="card-title">Sistemas ISO e Auditorias Internas</h3>
             <p class="card-sub">
-              Implantamos ou simplificamos sistemas de gestão baseados em ISO 9001, 14001 e 45001, com foco em ser leve, prático e audit‑ready para PMEs.
+              Implantamos ou simplificamos sistemas de gestão baseados em ISO 9001, 14001 e 45001, deixando-os leves, práticos e prontos para auditoria.
             </p>
             <ul class="card-list">
-              <li>Implantação e revisão de sistemas de gestão (SGQ / SGI).</li>
-              <li>Auditorias internas, pré-auditorias e preparação para certificação/recertificação.</li>
-              <li>Integração com a rotina de produção e com programas de melhoria contínua.</li>
+              <li>Implantação ou revisão de SGQ/SGI para PMEs.</li>
+              <li>Auditorias internas e preparação para certificação/recertificação.</li>
             </ul>
-            <div class="card-meta">Ideal para empresas que não querem ser surpreendidas em auditorias externas.</div>
+            <div class="card-meta">Para não ser surpreendido em auditorias externas.</div>
           </article>
+        </div>
 
-          <!-- 3) Diagnóstico -->
+        <div class="cards-secondary">
+          <!-- Diagnóstico -->
           <article class="card">
-            <div class="card-label">3 · Diagnóstico de performance industrial</div>
+            <div class="card-label">3 · Diagnóstico de performance</div>
             <h3 class="card-title">Diagnóstico Rápido da Fábrica</h3>
             <p class="card-sub">
-              Um estudo pontual para entender onde a sua fábrica está perdendo dinheiro, tempo e oportunidades, e definir um plano de ação para os próximos 90 dias.
+              Estudo pontual para entender onde a fábrica perde dinheiro e tempo, com um plano de ação claro para os próximos 90 dias.
             </p>
             <ul class="card-list">
-              <li>Conversa inicial com direção/gestão.</li>
-              <li>Visita à planta (gemba, entrevistas, análise de dados disponíveis).</li>
-              <li>Relatório de diagnóstico + prioridades de ação.</li>
+              <li>Conversa com direção/gestão e visita à planta.</li>
+              <li>Mapa de desperdícios, riscos e oportunidades.</li>
             </ul>
-            <div class="card-meta">Porta de entrada natural para os programas mensais ou projeto solo.</div>
           </article>
 
-          <!-- 4) Processos críticos / soldagem -->
+          <!-- Processos críticos -->
           <article class="card">
-            <div class="card-label">4 · Qualidade em processos críticos</div>
+            <div class="card-label">4 · Processos críticos</div>
             <h3 class="card-title">Qualidade em Soldagem e Processos Críticos</h3>
             <p class="card-sub">
-              Analisamos e melhoramos processos de soldagem e outros pontos críticos da produção para reduzir falhas, retrabalho e risco em campo.
+              Análise e melhoria de processos de soldagem e outros pontos críticos para reduzir falhas, retrabalho e risco em campo.
             </p>
             <ul class="card-list">
-              <li>Diagnóstico técnico de processos de soldagem.</li>
-              <li>Ajustes em procedimentos, controles e inspeções.</li>
-              <li>Plano de ação para aumentar confiabilidade e reduzir custo de não qualidade.</li>
+              <li>Diagnóstico técnico e recomendações de ajuste.</li>
+              <li>Foco em confiabilidade e redução de custo de não qualidade.</li>
             </ul>
-            <div class="card-meta">Especialmente relevante para fabricantes de equipamentos e componentes soldados.</div>
           </article>
 
-          <!-- 5) Treinamentos -->
+          <!-- Treinamentos -->
           <article class="card">
             <div class="card-label">5 · Treinamentos in company</div>
             <h3 class="card-title">Formação em Qualidade e Melhoria Contínua</h3>
             <p class="card-sub">
-              Treinamentos práticos, adaptados à realidade da sua empresa, para fortalecer a competência da equipe em qualidade e melhoria.
+              Treinamentos práticos, usando exemplos da sua empresa, para fortalecer a equipe em qualidade, Lean e sistemas ISO.
             </p>
             <ul class="card-list">
-              <li>ISO 9001/14001/45001 na prática (interpretação e aplicação).</li>
-              <li>Ferramentas da qualidade e Lean aplicadas aos seus processos.</li>
-              <li>Formação de auditores internos com foco em agregar valor.</li>
+              <li>ISO 9001/14001/45001 na prática.</li>
+              <li>Ferramentas da qualidade e Lean.</li>
             </ul>
-            <div class="card-meta">Formatos de 1 ou 2 dias, realizados na sua empresa.</div>
           </article>
         </div>
       </section>
 
+      <!-- PARA QUEM É -->
+      <section class="section">
+        <h2 class="section-title">Para quem é</h2>
+        <p class="section-lead">
+          Trabalho com <span class="highlight">pequenas e médias empresas industriais</span> que:
+        </p>
+        <ul class="bullets">
+          <li>Têm retrabalho, sucata e atrasos de entrega frequentes.</li>
+          <li>Precisam de ISO 9001/14001/45001 que funcione no dia a dia, não só no papel.</li>
+          <li>Querem melhorar, mas faltam tempo e estrutura interna de qualidade.</li>
+        </ul>
+      </section>
+
+      <!-- AUTORIDADE -->
       <section class="section">
         <h2 class="section-title">Autoridade técnica</h2>
         <p class="section-lead">
-          A consultoria é conduzida por um profissional com forte base técnica e experiência em ambientes industriais globais.
+          A consultoria é conduzida por um profissional com forte base técnica e experiência prática em ambientes industriais.
         </p>
         <div class="pill-row">
           <span class="pill">Lean Six Sigma Master Black Belt</span>
