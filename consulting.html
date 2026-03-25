@@ -141,35 +141,49 @@
       background: linear-gradient(135deg, #1d4ed8, #1e40af);
     }
 
-    /* FAIXA DOS QUATRO PONTOS PRINCIPAIS */
+    /* QUATRO PONTOS PRINCIPAIS – AGORA MAIS FORTES */
 
     .key-strip {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 12px;
+      gap: 0;
       margin-bottom: 40px;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #e0ecff;
+      border: 1px solid #bfdbfe;
     }
 
     .key-item {
-      padding: 12px 10px;
-      border-radius: 12px;
-      background: #f9fafb;
-      border: 1px solid #e5e7eb;
+      padding: 14px 16px;
+      border-right: 1px solid rgba(148,163,184,0.4);
+      cursor: default;
+      transition: background 0.15s ease-out, transform 0.15s ease-out;
+    }
+
+    .key-item:last-child {
+      border-right: none;
+    }
+
+    .key-item:hover {
+      background: #d4e4ff;
+      transform: translateY(-1px);
     }
 
     .key-title {
-      font-size: 20px;
-      font-weight: 650;
+      font-size: 22px;
+      font-weight: 700;
       color: #1d4ed8;
       margin-bottom: 4px;
     }
 
     .key-text {
-      font-size: 14px;
-      color: var(--text-muted);
+      font-size: 15px;
+      color: var(--text-main);
+      opacity: 0.85;
     }
 
-    /* SEÇÃO SERVIÇOS (RESUMIDA) */
+    /* SEÇÃO SERVIÇOS – TÍTULOS MAIS FORTES */
 
     .section {
       margin-bottom: 32px;
@@ -207,9 +221,10 @@
     }
 
     .service-title {
-      font-size: 18px;
-      font-weight: 600;
+      font-size: 20px;
+      font-weight: 650;
       margin-bottom: 6px;
+      color: #1f2937;
     }
 
     .service-text {
@@ -335,7 +350,7 @@
         </div>
       </section>
 
-      <!-- QUATRO PONTOS PRINCIPAIS (TIPOGRAFIA FORTE) -->
+      <!-- QUATRO PONTOS PRINCIPAIS -->
       <section class="key-strip">
         <div class="key-item">
           <div class="key-title">Melhoria contínua</div>
@@ -343,7 +358,7 @@
         </div>
         <div class="key-item">
           <div class="key-title">Sistema integrado de gestão</div>
-          <div class="key-text">ISO 9001, 14001 e 45001 funcionando de forma integrada, leve e alinhada com a operação da PME.</div>
+          <div class="key-text">ISO 9001, 14001 e 45001 funcionando de forma integrada, leve e alinhada à operação da PME.</div>
         </div>
         <div class="key-item">
           <div class="key-title">Diagnóstico rápido</div>
@@ -355,7 +370,7 @@
         </div>
       </section>
 
-      <!-- SERVIÇOS (RESUMO) -->
+      <!-- SERVIÇOS EM MAIS DETALHE -->
       <section class="section">
         <h2 class="section-title">Serviços em mais detalhe</h2>
         <p class="section-lead">
@@ -366,7 +381,7 @@
           <div class="service-block">
             <div class="service-title">Programas de Melhoria Contínua (2 ou 4 dias/mês)</div>
             <p class="service-text">
-              Construímos uma rotina simples de melhoria contínua na sua fábrica, com metas claras, reuniões regulares e foco nos problemas que mais doem.
+              Construímos uma rotina simples de melhoria contínua na sua fábrica, com metas claras e foco nos problemas que mais doem.
             </p>
             <ul class="service-list">
               <li><strong>Essencial:</strong> 2 dias/mês para organizar a casa sem travar a operação.</li>
@@ -377,7 +392,7 @@
           <div class="service-block">
             <div class="service-title">Sistema Integrado de Gestão (ISO 9001 · 14001 · 45001)</div>
             <p class="service-text">
-              Implantação ou simplificação de sistemas de gestão, unificando requisitos de qualidade, meio ambiente e saúde e segurança em um SGI que funciona no dia a dia.
+              Implantação ou simplificação de sistemas de gestão, unificando requisitos de qualidade, meio ambiente e segurança em um SGI que funciona no dia a dia.
             </p>
             <ul class="service-list">
               <li>Desenho ou revisão de processos e documentos essenciais.</li>
