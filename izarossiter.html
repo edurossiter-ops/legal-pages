@@ -65,19 +65,18 @@
       gap: 18px;
     }
 
-    .monogram {
-      width: 80px;                    /* ÍCONE MAIOR */
-      height: 80px;
-      border-radius: 18px;
-      border: 1px solid rgba(200, 155, 60, 0.5);
+    .logo-box {
+      width: 90px;              /* tamanho do quadrado do logo */
+      height: 90px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, #ffffff, #f3e7d3);
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      font-size: 26px;
-      color: #b18733;
+    }
+
+    .logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
 
     .brand-text {
@@ -528,10 +527,12 @@
     <div class="shell">
       <header>
         <div class="brand">
-          <div class="monogram">IR</div>
+          <div class="logo-box">
+            <img src="logo-iza.png" alt="Logo Iza Rossiter" class="logo-img">
+          </div>
           <div class="brand-text">
             <div class="brand-name">IZA ROSSITER</div>
-            <div class="brand-tagline">Advocacia & Consultoria Jurídica</div>
+            <div class="brand-tagline">Advocacia &amp; Consultoria Jurídica</div>
           </div>
         </div>
         <div class="header-cta">
