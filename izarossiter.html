@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Iza Rossiter - Direito Internacional de Família & Saúde</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --bg: #f5f5f7;
+      --bg-alt: #ffffff;
+      --primary: #c89b3c;
+      --primary-soft: #f4ebd7;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --border-subtle: #e5e7eb;
+      --radius-lg: 20px;
+      --radius-full: 999px;
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #fdfcfb, #f5f5f7);
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .shell {
+      max-width: 1180px;
+      width: 100%;
+      background: linear-gradient(135deg, #ffffff, #f8fafc);
+      border-radius: 32px;
+      box-shadow: var(--shadow-soft);
+      padding: 32px 32px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .monogram {
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 30% 0%, #f9fafb, #e5e7eb);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      font-size: 18px;
+      color: #9a7b33;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand-name {
+      font-size: 19px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .brand-tagline {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
+
+    .header-cta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .whatsapp-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      background: rgba(16, 185, 129, 0.08);
+      color: #047857;
+      font-size: 13px;
+      border: 1px solid rgba(16, 185, 129, 0.25);
+    }
+
+    .whatsapp-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.25);
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(34px, 4vw, 40px);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      margin-bottom: 14px;
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+      line-height: 1.5;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      max-width: 640px;
+    }
+
+    .hero-extra {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .btn-whatsapp {
+      border: none;
+      background: radial-gradient(circle at 0 0, #6ee7b7, #10b981);
+      color: #ecfdf5;
+      padding: 14px 26px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      box-shadow: 0 18px 35px rgba(16, 185, 129, 0.35);
+      transform: translateY(0);
+      transition: transform 0.13s ease, box-shadow 0.13s ease, filter 0.13s ease;
+    }
+
+    .btn-whatsapp:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 22px 45px rgba(16, 185, 129, 0.4);
+      filter: brightness(1.04);
+    }
+
+    .btn-outline {
+      border-radius: 999px;
+      padding: 13px 22px;
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      background: rgba(255, 255, 255, 0.9);
+      font-size: 14px;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .meta-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 999px;
+      background: rgba(148, 163, 184, 0.9);
+    }
+
+    .hero-photo-card {
+      position: relative;
+      background: var(--bg-alt);
+      border-radius: 26px;
+      padding: 18px 18px 22px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+      overflow: hidden;
+    }
+
+    .hero-photo {
+      width: 100%;
+      aspect-ratio: 4/5;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #e5e7eb, #cbd5f5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #9ca3af;
+      font-size: 14px;
+      font-weight: 500;
+      text-align: center;
+      padding: 12px;
+    }
+
+    .hero-chip {
+      position: absolute;
+      left: 22px;
+      bottom: 24px;
+      padding: 10px 14px;
+      border-radius: 16px;
+      background: rgba(17, 24, 39, 0.9);
+      color: #f9fafb;
+      font-size: 13px;
+      display: inline-flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .hero-chip span:first-child {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      opacity: 0.7;
+    }
+
+    .hero-chip span:last-child {
+      font-weight: 600;
+    }
+
+    section {
+      border-radius: 24px;
+      padding: 24px 22px 22px;
+      background: rgba(248, 250, 252, 0.9);
+      border: 1px solid rgba(226, 232, 240, 0.85);
+    }
+
+    section + section {
+      margin-top: 10px;
+    }
+
+    section h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+
+    section p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      max-width: 780px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pill {
+      padding: 7px 13px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.04);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 13px;
+      color: #111827;
+    }
+
+    .pill.accent {
+      background: rgba(200, 155, 60, 0.09);
+      border-color: rgba(200, 155, 60, 0.55);
+      color: #92400e;
+    }
+
+    .grid-services {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 4px;
+    }
+
+    .service-card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 18px 16px 16px;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+    }
+
+    .service-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
+
+    .service-title {
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .service-text {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .service-list {
+      margin-top: 4px;
+      padding-left: 16px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .service-list li + li {
+      margin-top: 3px;
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 20px;
+      align-items: start;
+    }
+
+    .about-tag {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .about-highlight {
+      padding: 14px 12px;
+      border-radius: 16px;
+      background: rgba(200, 155, 60, 0.06);
+      border: 1px solid rgba(200, 155, 60, 0.5);
+      font-size: 13px;
+      color: #92400e;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 4px;
+    }
+
+    .step {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 14px 12px 13px;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      font-size: 13px;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .step-num {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      margin-bottom: 2px;
+      color: #4b5563;
+    }
+
+    .step-title {
+      font-weight: 600;
+      color: #111827;
+      font-size: 13px;
+    }
+
+    .cta-final {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding: 20px 18px 16px;
+      border-radius: 20px;
+      background: radial-gradient(circle at 0 0, #fefce8, #f9fafb);
+      border: 1px solid rgba(234, 179, 8, 0.5);
+    }
+
+    .cta-final h3 {
+      font-size: 18px;
+      letter-spacing: -0.02em;
+    }
+
+    .cta-final p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    footer {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    .footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    @media (max-width: 960px) {
+      .shell {
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      main {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-photo-card {
+        order: -1;
+      }
+
+      .grid-services {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .about-layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        padding: 0;
+      }
+
+      .shell {
+        padding: 20px 16px 24px;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .grid-services {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .steps {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="shell">
+      <header>
+        <div class="brand">
+          <div class="monogram">IR</div>
+          <div class="brand-text">
+            <div class="brand-name">IZA ROSSITER</div>
+            <div class="brand-tagline">Advocacia & Consultoria Jurídica</div>
+          </div>
+        </div>
+        <div class="header-cta">
+          <div class="whatsapp-pill">
+            <span class="whatsapp-dot"></span>
+            <span>Atendimento 100% online para brasileiros no exterior</span>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <div class="hero-copy">
+          <h1>Advogada em Direito Internacional de Família & Saúde</h1>
+          <div class="hero-subtitle">
+            Especialista em casos transnacionais e planos de saúde, ajudando brasileiros que moram fora a resolver questões jurídicas entre Brasil e exterior com atendimento humanizado e estratégico.
+          </div>
+          <div class="hero-extra">
+            Atendimento 100% online, com base em Hamm (Alemanha) e foco nas necessidades de brasileiros expatriados.
+          </div>
+          <div class="hero-ctas">
+            <button class="btn-whatsapp" onclick="window.location.href='https://wa.me/SEU_NUMERO_AQUI';">
+              <span>💬</span>
+              <span>Falar com a Dra. Iza no WhatsApp</span>
+            </button>
+            <button class="btn-outline" onclick="document.getElementById('para-quem-e').scrollIntoView({behavior:'smooth'});">
+              Entender se o atendimento é para mim
+            </button>
+          </div>
+          <div class="hero-meta">
+            <div class="meta-item">
+              <span class="meta-dot"></span>
+              <span>Direito Internacional de Família & Saúde</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-dot"></span>
+              <span>Casos transnacionais e planos de saúde</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-dot"></span>
+              <span>Atendimento humanizado e estratégico</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-photo-card">
+          <div class="hero-photo">
+            Substitua este bloco pela foto profissional da Dra. Iza.
+          </div>
+          <div class="hero-chip">
+            <span>Foco</span>
+            <span>Brasileiros que vivem fora do Brasil</span>
+          </div>
+        </div>
+      </main>
+
+      <section id="para-quem-e">
+        <h2>Para quem é</h2>
+        <p>
+          A atuação é voltada a brasileiros que moram no exterior e enfrentam situações em que as leis brasileiras e estrangeiras se cruzam, exigindo orientação especializada em Direito Internacional de Família & Saúde.
+        </p>
+        <div class="pill-row">
+          <div class="pill accent">Brasileiros expatriados com processos ou ações no Brasil</div>
+          <div class="pill">Famílias divididas entre países diferentes</div>
+          <div class="pill">Negativa de plano de saúde ou acesso a tratamentos</div>
+          <div class="pill">Profissionais que vivem fora, mas dependem de planos no Brasil</div>
+          <div class="pill">Quem precisa de consultoria jurídica entre Brasil e exterior</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Como a Dra. Iza pode ajudar</h2>
+        <p>
+          A atuação une Direito Internacional de Família & Saúde, com foco em estratégias jurídicas pensadas para a realidade de quem mora fora do Brasil e não pode acompanhar tudo de perto.
+        </p>
+        <div class="grid-services">
+          <div class="service-card">
+            <div class="service-label">Serviço 01</div>
+            <div class="service-title">Direito Internacional de Família</div>
+            <div class="service-text">
+              Família em mais de um país, com segurança jurídica e planejamento adequado.
+            </div>
+            <ul class="service-list">
+              <li>Divórcios com cônjuges em países diferentes.</li>
+              <li>Guarda e visitas de filhos em contexto internacional.</li>
+              <li>Pensão alimentícia envolvendo residentes no Brasil e no exterior.</li>
+              <li>Reconhecimento e execução de decisões estrangeiras no Brasil.</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <div class="service-label">Serviço 02</div>
+            <div class="service-title">Direito da Saúde e Planos de Saúde</div>
+            <div class="service-text">
+              Quando o plano diz “não” e você precisa de uma resposta jurídica segura.
+            </div>
+            <ul class="service-list">
+              <li>Contestação de negativas de cobertura.</li>
+              <li>Demandas sobre medicamentos, exames, cirurgias e tratamentos.</li>
+              <li>Questões envolvendo planos de saúde de brasileiros que moram fora.</li>
+              <li>Consultoria prévia sobre direitos antes de procedimentos.</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <div class="service-label">Serviço 03</div>
+            <div class="service-title">Consultoria para Expatriados</div>
+            <div class="service-text">
+              Consultoria estratégica para decisões que envolvam Brasil e exterior.
+            </div>
+            <ul class="service-list">
+              <li>Análise de riscos jurídicos em cenários internacionais.</li>
+              <li>Orientações sobre documentos, registros e provas.</li>
+              <li>Apoio em articulação com outros profissionais e jurisdições.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="about-layout">
+          <div>
+            <div class="about-tag">Sobre a Dra. Iza Rossiter</div>
+            <h2>Atendimento humanizado e estratégico para brasileiros que vivem fora</h2>
+            <p>
+              Advogada atuante em Direito Internacional de Família & Saúde, especialista em casos transnacionais e planos de saúde. Oferece atendimento 100% online para brasileiros que moram fora do país e precisam resolver questões jurídicas envolvendo o Brasil e o exterior.
+            </p>
+            <p>
+              Com experiência em casos que cruzam fronteiras, o foco é proporcionar um atendimento próximo: explicar com clareza, avaliar cenários possíveis e construir, junto com o cliente, o caminho jurídico mais adequado.
+            </p>
+            <p>
+              Baseada em Hamm, na Alemanha, a Dra. Iza compreende os desafios de quem vive fora do Brasil e traz essa visão para a condução dos casos. Além do português, também atende em alemão, quando necessário.
+            </p>
+          </div>
+          <div>
+            <div class="about-highlight">
+              <strong>Em construção:</strong> aqui você pode destacar formação acadêmica, especializações, participação em instituições e registro na OAB. Basta editar este texto quando tiver os dados definitivos.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Como funciona o atendimento</h2>
+        <p>
+          O objetivo é tornar o processo mais leve e organizado para quem está longe do Brasil, com comunicação clara e passos bem definidos.
+        </p>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-title">Contato inicial</div>
+            <div>
+              Você entra em contato pelo WhatsApp, explica brevemente sua situação, o país onde está e a urgência.
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-title">Análise e agendamento</div>
+            <div>
+              A situação é analisada e é agendada reunião online para entender melhor o caso.
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-title">Estratégia jurídica</div>
+            <div>
+              Na reunião são apresentados cenários, riscos e próximos passos, construindo a estratégia junto com o cliente.
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-title">Acompanhamento</div>
+            <div>
+              Durante o caso, o acompanhamento é feito por canais digitais, considerando fuso horário e necessidade de atualizações.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="cta-final">
+          <h3>Precisa de apoio jurídico entre Brasil e exterior?</h3>
+          <p>
+            Se você mora fora do Brasil e está enfrentando uma situação jurídica que envolve família, saúde ou decisões em mais de um país, não precisa lidar com isso sozinho.
+          </p>
+          <p>
+            A atuação da Dra. Iza é pensada para a realidade de brasileiros expatriados, com foco em segurança jurídica e comunicação clara.
+          </p>
+          <div class="hero-ctas">
+            <button class="btn-whatsapp" onclick="window.location.href='https://wa.me/SEU_NUMERO_AQUI';">
+              <span>💬</span>
+              <span>Falar com a Dra. Iza no WhatsApp</span>
+            </button>
+          </div>
+          <p style="font-size:12px;color:var(--text-muted);margin-top:-4px;">
+            Explique brevemente sua situação, informe em que país está e qual é a sua dúvida. A partir disso, será avaliada a melhor forma de atuação.
+          </p>
+        </div>
+
+        <footer>
+          <div class="footer-top">
+            <div>
+              Atendimento 100% online para brasileiros no exterior. Base em Hamm · Alemanha.
+            </div>
+            <div class="footer-links">
+              <a href="#">Política de privacidade</a>
+              <a href="#">Termos de uso</a>
+              <a href="https://www.instagram.com/izarossiter" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </div>
+          </div>
+          <div>
+            &copy; <span id="year"></span> Iza Rossiter Advocacia & Consultoria Jurídica. Todos os direitos reservados.
+          </div>
+        </footer>
+      </section>
+    </div>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
