@@ -6,19 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     :root {
-      --bg: #f4f5f7;
-      --bg-card: #ffffff;
-      --bg-soft: #eef2ff;
+      --bg: #f3f4f6;
+      --bg-alt: #f9fafb;
       --accent: #2563eb;
       --accent-soft: #dbeafe;
       --accent-dark: #1d4ed8;
       --text-main: #0f172a;
-      --text-muted: #64748b;
-      --border-subtle: #e2e8f0;
-      --radius-lg: 16px;
-      --radius-xl: 20px;
+      --text-muted: #6b7280;
+      --card-bg: #ffffff;
+      --border-subtle: #e5e7eb;
+      --radius-lg: 18px;
       --radius-full: 999px;
-      --shadow-soft: 0 8px 24px rgba(15,23,42,0.08);
+      --shadow-soft: 0 10px 30px rgba(15,23,42,0.10);
       --transition-fast: 0.2s ease-out;
     }
 
@@ -30,7 +29,7 @@
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #e5edff 0, #f8fafc 40%, #f4f5f7 100%);
+      background: radial-gradient(circle at top, #e0edff 0, #f9fafb 45%, #f3f4f6 100%);
       color: var(--text-main);
       -webkit-font-smoothing: antialiased;
       line-height: 1.6;
@@ -50,18 +49,7 @@
 
     .shell {
       width: 100%;
-      max-width: 1120px;
-      background: rgba(255,255,255,0.95);
-      border-radius: 28px;
-      border: 1px solid rgba(226,232,240,0.9);
-      box-shadow: 0 18px 45px rgba(148,163,184,0.28);
-      padding: 28px 24px 32px;
-    }
-
-    @media (min-width: 960px) {
-      .shell {
-        padding: 32px 32px 36px;
-      }
+      max-width: 960px;
     }
 
     header {
@@ -69,36 +57,35 @@
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      margin-bottom: 28px;
+      margin-bottom: 32px;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
 
     .brand-logo {
-      width: 40px;
-      height: 40px;
-      border-radius: 14px;
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
       background: linear-gradient(135deg, #2563eb, #60a5fa);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 700;
       color: #ffffff;
+      font-weight: 700;
       font-size: 18px;
-      box-shadow: 0 8px 20px rgba(37,99,235,0.4);
+      box-shadow: 0 10px 24px rgba(37,99,235,0.45);
     }
 
-    .brand-text-main {
+    .brand-title {
       font-size: 14px;
       font-weight: 600;
-      color: #0f172a;
     }
 
-    .brand-text-sub {
+    .brand-sub {
       font-size: 12px;
       color: var(--text-muted);
     }
@@ -107,23 +94,19 @@
       font-size: 11px;
       padding: 6px 10px;
       border-radius: var(--radius-full);
-      border: 1px solid var(--border-subtle);
-      background: #f8fafc;
-      color: var(--text-muted);
+      background: rgba(219,234,254,0.7);
+      color: #1d4ed8;
+    }
+
+    @media (max-width: 640px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
 
     .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-      gap: 32px;
-      margin-bottom: 32px;
-      align-items: center;
-    }
-
-    @media (max-width: 880px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
+      margin-bottom: 40px;
     }
 
     .hero-eyebrow {
@@ -131,26 +114,25 @@
       text-transform: uppercase;
       letter-spacing: 0.16em;
       color: var(--accent-dark);
-      margin-bottom: 8px;
-    }
-
-    .hero-title {
-      font-size: clamp(26px, 3.2vw, 32px);
-      font-weight: 650;
-      line-height: 1.1;
-      color: #0f172a;
       margin-bottom: 10px;
     }
 
+    .hero-title {
+      font-size: clamp(30px, 4vw, 38px);
+      font-weight: 650;
+      line-height: 1.05;
+      margin-bottom: 12px;
+    }
+
     .hero-subtitle {
-      font-size: 14px;
+      font-size: 15px;
       color: var(--text-muted);
-      max-width: 540px;
-      margin-bottom: 18px;
+      max-width: 640px;
+      margin-bottom: 20px;
     }
 
     .hero-subtitle strong {
-      color: #0f172a;
+      color: var(--text-main);
       font-weight: 600;
     }
 
@@ -158,42 +140,42 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
 
     .btn-primary {
       border: none;
       border-radius: var(--radius-full);
-      padding: 10px 18px;
+      padding: 11px 20px;
       font-size: 14px;
       font-weight: 500;
       background: linear-gradient(135deg, #2563eb, #1d4ed8);
       color: #ffffff;
       cursor: pointer;
-      box-shadow: 0 10px 26px rgba(37,99,235,0.4);
+      box-shadow: 0 12px 30px rgba(37,99,235,0.45);
       transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
     }
 
     .btn-primary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 12px 30px rgba(37,99,235,0.55);
+      box-shadow: 0 14px 34px rgba(37,99,235,0.6);
       background: linear-gradient(135deg, #1d4ed8, #1e40af);
     }
 
     .btn-ghost {
       border-radius: var(--radius-full);
-      padding: 9px 16px;
+      padding: 10px 17px;
       font-size: 13px;
-      border: 1px solid var(--border-subtle);
-      background: #ffffff;
-      color: var(--text-main);
+      border: 1px solid rgba(191,219,254,0.9);
+      background: #eff6ff;
+      color: #1d4ed8;
       cursor: pointer;
       transition: background var(--transition-fast), border-color var(--transition-fast);
     }
 
     .btn-ghost:hover {
-      background: #f1f5f9;
-      border-color: #cbd5e1;
+      background: #dbeafe;
+      border-color: #93c5fd;
     }
 
     .hero-meta {
@@ -209,25 +191,36 @@
       border-radius: var(--radius-full);
       background: #eff6ff;
       color: #1d4ed8;
-      border: 1px solid #bfdbfe;
     }
 
-    .hero-card {
-      border-radius: var(--radius-xl);
-      background: #ffffff;
-      border: 1px solid var(--border-subtle);
-      padding: 16px 16px 18px;
+    .layout-two {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+      gap: 28px;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 880px) {
+      .layout-two {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .hero-side-card {
+      background: var(--card-bg);
+      border-radius: 22px;
+      padding: 16px 18px 18px;
       box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(226,232,240,0.9);
     }
 
-    .hero-card-title {
-      font-size: 15px;
+    .hero-side-title {
+      font-size: 14px;
       font-weight: 600;
       margin-bottom: 4px;
-      color: #0f172a;
     }
 
-    .hero-card-text {
+    .hero-side-text {
       font-size: 13px;
       color: var(--text-muted);
       margin-bottom: 8px;
@@ -237,7 +230,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
-      margin-top: 6px;
+      margin-top: 4px;
     }
 
     .hero-chip {
@@ -248,59 +241,36 @@
       color: #1d4ed8;
     }
 
-    main {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-      gap: 20px;
-    }
-
-    @media (max-width: 960px) {
-      main {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
     .section {
-      background: #ffffff;
-      border-radius: var(--radius-xl);
-      border: 1px solid var(--border-subtle);
-      padding: 16px 16px 18px;
-      box-shadow: var(--shadow-soft);
+      margin-bottom: 32px;
+      padding: 18px 0;
+      border-top: 1px solid rgba(226,232,240,0.9);
     }
 
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      align-items: center;
-      margin-bottom: 8px;
+    .section:first-of-type {
+      border-top: none;
     }
 
     .section-title {
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #1d4ed8;
-    }
-
-    .section-tag {
-      font-size: 11px;
-      padding: 4px 8px;
-      border-radius: var(--radius-full);
-      background: #eff6ff;
-      color: #1e3a8a;
-    }
-
-    .section-body {
       font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #1d4ed8;
+      margin-bottom: 8px;
+    }
+
+    .section-lead {
+      font-size: 14px;
       color: var(--text-muted);
+      max-width: 640px;
+      margin-bottom: 10px;
     }
 
     .bullets {
-      margin-top: 6px;
-      padding-left: 16px;
-      font-size: 13px;
+      margin-top: 4px;
+      padding-left: 18px;
+      font-size: 14px;
+      color: var(--text-muted);
     }
 
     .bullets li {
@@ -308,83 +278,77 @@
     }
 
     .highlight {
-      color: #0f172a;
       font-weight: 600;
+      color: var(--text-main);
     }
 
-    .service-card {
+    .cards-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .cards-row {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .card {
+      background: var(--card-bg);
       border-radius: var(--radius-lg);
-      border: 1px solid var(--border-subtle);
-      background: #ffffff;
-      padding: 12px 12px 13px;
-      margin-bottom: 10px;
-      transition: box-shadow var(--transition-fast), transform var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
-      cursor: default;
+      padding: 14px 14px 16px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(226,232,240,0.9);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
     }
 
-    .service-card:hover {
-      box-shadow: 0 12px 26px rgba(148,163,184,0.3);
-      transform: translateY(-1px);
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 38px rgba(148,163,184,0.35);
       border-color: #bfdbfe;
       background: #f9fafb;
     }
 
-    .service-header {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      align-items: baseline;
-      margin-bottom: 6px;
-    }
-
-    .service-name {
-      font-size: 13px;
-      font-weight: 600;
-      color: #0f172a;
-    }
-
-    .service-label {
+    .card-label {
       font-size: 11px;
-      padding: 3px 8px;
-      border-radius: var(--radius-full);
-      background: #eff6ff;
-      color: #1d4ed8;
-      border: 1px solid #bfdbfe;
-      white-space: nowrap;
-    }
-
-    .service-line {
-      font-size: 12px;
-      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #93c5fd;
       margin-bottom: 4px;
     }
 
-    .service-text {
+    .card-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--text-main);
+    }
+
+    .card-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .card-list {
+      list-style: none;
       font-size: 12px;
       color: var(--text-muted);
-      margin-bottom: 6px;
     }
 
-    .service-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
+    .card-list li {
+      margin-bottom: 3px;
+    }
+
+    .card-meta {
+      margin-top: 8px;
       font-size: 11px;
       color: var(--text-muted);
-      margin-top: 4px;
     }
 
-    .service-meta span {
-      padding-right: 10px;
-      border-right: 1px solid #e2e8f0;
-    }
-
-    .service-meta span:last-child {
-      border-right: none;
-      padding-right: 0;
-    }
-
-    .pill-list {
+    .pill-row {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
@@ -393,34 +357,33 @@
 
     .pill {
       font-size: 11px;
-      padding: 4px 10px;
+      padding: 4px 9px;
       border-radius: var(--radius-full);
-      background: #f1f5f9;
-      color: var(--text-muted);
+      background: #e5e7eb;
+      color: #4b5563;
     }
 
     footer {
-      margin-top: 22px;
-      padding-top: 12px;
-      border-top: 1px solid var(--border-subtle);
+      padding-top: 18px;
+      border-top: 1px solid rgba(226,232,240,0.9);
       display: flex;
       justify-content: space-between;
-      gap: 12px;
       flex-wrap: wrap;
+      gap: 10px;
       font-size: 11px;
       color: var(--text-muted);
     }
 
     .footer-cta {
       display: flex;
+      flex-wrap: wrap;
       gap: 8px;
       align-items: center;
-      flex-wrap: wrap;
     }
 
     .footer-cta button {
       border-radius: var(--radius-full);
-      border: 1px solid var(--accent-soft);
+      border: 1px solid rgba(191,219,254,0.9);
       background: #eff6ff;
       color: #1d4ed8;
       padding: 6px 11px;
@@ -435,23 +398,8 @@
     }
 
     @media (max-width: 640px) {
-      .shell {
-        padding: 22px 18px 26px;
-      }
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
-      .hero {
-        gap: 22px;
-        margin-bottom: 24px;
-      }
-      main {
-        gap: 16px;
-      }
-      .section {
-        padding: 14px 12px 16px;
+      .page {
+        padding: 24px 14px 32px;
       }
     }
   </style>
@@ -463,254 +411,169 @@
         <div class="brand">
           <div class="brand-logo">Q</div>
           <div>
-            <div class="brand-text-main">Consultoria em Qualidade para PMEs Industriais</div>
-            <div class="brand-text-sub">Hamm · Ruhrgebiet · Alemanha</div>
+            <div class="brand-title">Consultoria em Qualidade para PMEs Industriais</div>
+            <div class="brand-sub">Hamm · Ruhrgebiet · Alemanha</div>
           </div>
         </div>
         <div class="header-tag">Foco em pequenas e médias empresas industriais</div>
       </header>
 
       <section class="hero">
-        <div>
-          <div class="hero-eyebrow">Consultoria prática, para o dia a dia</div>
-          <h1 class="hero-title">
-            Eu ajudo PMEs industriais a reduzir custos, problemas de qualidade e riscos de auditoria.
-          </h1>
-          <p class="hero-subtitle">
-            Consultoria em <strong>sistemas de gestão, Lean Six Sigma e qualidade industrial</strong> para pequenas e médias empresas – com foco em resultados práticos, visíveis nos indicadores e no cliente final.
-          </p>
-          <div class="hero-actions">
-            <button class="btn-primary">Agendar conversa de 30 minutos</button>
-            <button class="btn-ghost">Ver programas e formatos de trabalho</button>
-          </div>
-          <div class="hero-meta">
-            <span class="hero-meta-pill">PMEs industriais</span>
-            <span class="hero-meta-pill">Qualidade · Produção · SGI (ISO)</span>
-            <span class="hero-meta-pill">Região de Hamm / Dortmund</span>
-          </div>
-        </div>
-        <div>
-          <div class="hero-card">
-            <div class="hero-card-title">Menos problema, mais previsibilidade.</div>
-            <div class="hero-card-text">
-              Projetos orientados a reduzir retrabalho, sucata, atrasos de entrega e risco de não conformidades – sempre com metas claras e acompanhamento mensal.
+        <div class="layout-two">
+          <div>
+            <div class="hero-eyebrow">Consultoria pragmática, sem complicação</div>
+            <h1 class="hero-title">
+              Eu ajudo PMEs industriais a reduzir custos, problemas de qualidade e riscos de auditoria.
+            </h1>
+            <p class="hero-subtitle">
+              Consultoria em <strong>sistemas de gestão, Lean Six Sigma e qualidade industrial</strong> para pequenas e médias empresas – com foco em resultado prático, visível nos indicadores e no cliente final.
+            </p>
+            <div class="hero-actions">
+              <button class="btn-primary">Agendar conversa de 30 minutos</button>
+              <button class="btn-ghost">Ver programas de trabalho</button>
             </div>
-            <div class="hero-chip-row">
-              <span class="hero-chip">Lean Six Sigma Master Black Belt</span>
-              <span class="hero-chip">Lead Auditor ISO 9001 · 14001 · 45001</span>
-              <span class="hero-chip">Experiência em ambiente industrial</span>
+            <div class="hero-meta">
+              <span class="hero-meta-pill">PMEs industriais</span>
+              <span class="hero-meta-pill">Qualidade · Produção · SGI (ISO)</span>
+              <span class="hero-meta-pill">Região de Hamm / Dortmund</span>
+            </div>
+          </div>
+          <div>
+            <div class="hero-side-card">
+              <div class="hero-side-title">Menos incêndio, mais previsibilidade.</div>
+              <div class="hero-side-text">
+                O objetivo é simples: reduzir retrabalho, sucata, atrasos e surpresas em auditorias – com uma rotina de melhoria que caiba na realidade da PME.
+              </div>
+              <div class="hero-chip-row">
+                <span class="hero-chip">Lean Six Sigma Master Black Belt</span>
+                <span class="hero-chip">Lead Auditor ISO 9001 · 14001 · 45001</span>
+                <span class="hero-chip">Experiência em ambiente industrial</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <main>
-        <section class="section">
-          <div class="section-header">
-            <h2 class="section-title">Para quem é</h2>
-            <span class="section-tag">Pequenas e médias indústrias</span>
-          </div>
-          <div class="section-body">
-            <p>
-              Eu trabalho diretamente com donos, diretores e gestores de produção/qualidade de <span class="highlight">pequenas e médias empresas industriais</span> que:
-            </p>
-            <ul class="bullets">
-              <li>Sofrem com retrabalho, sucata, paradas e atrasos de entrega.</li>
-              <li>Recebem reclamações de clientes ou têm devoluções frequentes.</li>
-              <li>Têm ISO 9001/14001/45001 (ou estão buscando) e sentem que o sistema não funciona no dia a dia.</li>
-              <li>Querem melhorar performance, mas não têm tempo nem estrutura interna de qualidade suficientemente forte.</li>
+      <section class="section">
+        <h2 class="section-title">Para quem é</h2>
+        <p class="section-lead">
+          Trabalho com <span class="highlight">pequenas e médias indústrias</span> que querem organizar processos, ganhar estabilidade e diminuir custos de não qualidade.
+        </p>
+        <ul class="bullets">
+          <li>Retrabalho, sucata, paradas e atrasos de entrega são frequentes.</li>
+          <li>Há reclamações de clientes ou devoluções que geram custo e desgaste.</li>
+          <li>ISO 9001/14001/45001 existem (ou estão no plano), mas o sistema não “vive” no dia a dia.</li>
+          <li>Falta tempo e estrutura interna para tocar melhoria contínua com consistência.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Programas principais</h2>
+        <p class="section-lead">
+          Em vez de projetos soltos, trabalho com formatos claros e previsíveis, alinhados à realidade de PMEs.
+        </p>
+
+        <div class="cards-row">
+          <article class="card">
+            <div class="card-label">Passo 1</div>
+            <h3 class="card-title">Diagnóstico de Performance Industrial</h3>
+            <p class="card-sub">Entenda onde a sua fábrica perde dinheiro, tempo e oportunidades.</p>
+            <ul class="card-list">
+              <li>Conversa inicial com direção/gestão.</li>
+              <li>Visita à planta (gemba, entrevistas, dados).</li>
+              <li>Relatório de diagnóstico + plano de ação para 90 dias.</li>
             </ul>
-            <p style="margin-top:8px;">
-              O foco é organizar processos, definir prioridades e implementar melhorias que aparecem nos indicadores – e na linha de resultado.
-            </p>
-          </div>
-        </section>
+            <div class="card-meta">Projeto pontual · Ideal antes de iniciar um programa mensal</div>
+          </article>
 
-        <section class="section">
-          <div class="section-header">
-            <h2 class="section-title">Programas e formatos</h2>
-            <span class="section-tag">Pacotes claros</span>
-          </div>
-          <div class="section-body">
-            <article class="service-card">
-              <header class="service-header">
-                <div>
-                  <div class="service-name">Diagnóstico de Performance Industrial</div>
-                  <div class="service-line">Entenda onde a sua fábrica perde dinheiro e oportunidades.</div>
-                </div>
-                <span class="service-label">Porta de entrada</span>
-              </header>
-              <p class="service-text">
-                Em poucas semanas, você terá uma visão clara dos principais desperdícios, riscos e gargalos na sua operação, com um plano de ação pragmático para os próximos 90 dias.
-              </p>
-              <ul class="bullets">
-                <li>Reunião inicial com direção/gestão para entender contexto e objetivos.</li>
-                <li>Visita à planta (gemba, entrevistas, análise de dados disponíveis).</li>
-                <li>Relatório de diagnóstico + mapa de oportunidades de melhoria.</li>
-              </ul>
-              <div class="service-meta">
-                <span>Projeto pontual</span>
-                <span>Ideal antes de iniciar um programa mensal</span>
-              </div>
-            </article>
+          <article class="card">
+            <div class="card-label">Programa enxuto</div>
+            <h3 class="card-title">Programa Essencial de Melhoria Contínua (2 dias/mês)</h3>
+            <p class="card-sub">Comece a organizar a casa sem travar a operação.</p>
+            <ul class="card-list">
+              <li>2 dias/mês: 1 dia na empresa, 1 dia remoto.</li>
+              <li>Foco em problemas recorrentes que mais doem.</li>
+              <li>Plano de ação vivo, acompanhado mês a mês.</li>
+            </ul>
+            <div class="card-meta">Recomendado por 6 meses · Bom ponto de partida para PMEs</div>
+          </article>
 
-            <article class="service-card">
-              <header class="service-header">
-                <div>
-                  <div class="service-name">Programa Essencial de Melhoria Contínua (2 dias/mês)</div>
-                  <div class="service-line">Comece a organizar a casa sem travar a operação.</div>
-                </div>
-                <span class="service-label">Enxuto · 6 meses</span>
-              </header>
-              <p class="service-text">
-                Implementamos, junto com a sua equipe, uma rotina simples de melhoria contínua, focada em problemas recorrentes que travam a produção e a qualidade, com acompanhamento mensal.
-              </p>
-              <ul class="bullets">
-                <li>2 dias de trabalho por mês (1 dia na empresa, 1 dia remoto).</li>
-                <li>Plano de ação vivo, com responsáveis e prazos claros.</li>
-                <li>Melhoria gradual de indicadores-chave (sucata, retrabalho, atraso, reclamações).</li>
-              </ul>
-              <div class="service-meta">
-                <span>Formato recomendado: 6 meses</span>
-                <span>Bom ponto de partida para PMEs</span>
-              </div>
-            </article>
+          <article class="card">
+            <div class="card-label">Programa intensivo</div>
+            <h3 class="card-title">Programa de Excelência Operacional (4 dias/mês)</h3>
+            <p class="card-sub">Acelere resultados em áreas críticas da sua planta.</p>
+            <ul class="card-list">
+              <li>4 dias/mês: 2 dias na empresa, 2 dias remotos.</li>
+              <li>Projetos estruturados em processos de maior impacto.</li>
+              <li>Metas claras de redução de custo, defeitos e atrasos.</li>
+            </ul>
+            <div class="card-meta">Recomendado por 6–12 meses · Para demandas mais urgentes</div>
+          </article>
+        </div>
+      </section>
 
-            <article class="service-card">
-              <header class="service-header">
-                <div>
-                  <div class="service-name">Programa Intensivo de Excelência Operacional (4 dias/mês)</div>
-                  <div class="service-line">Acelere resultados em áreas críticas da sua planta.</div>
-                </div>
-                <span class="service-label">Foco em resultado</span>
-              </header>
-              <p class="service-text">
-                Trabalhamos de forma mais próxima nas linhas e processos mais importantes, estruturando projetos de melhoria com metas claras de redução de custo, defeitos e atrasos em 6 a 12 meses.
-              </p>
-              <ul class="bullets">
-                <li>4 dias de trabalho por mês (2 dias na empresa, 2 dias remotos).</li>
-                <li>Projetos Lean Six Sigma em processos com maior impacto financeiro.</li>
-                <li>Engajamento de líderes e times de linha, com coaching no chão de fábrica.</li>
-              </ul>
-              <div class="service-meta">
-                <span>Formato recomendado: 6–12 meses</span>
-                <span>Para demandas mais urgentes ou complexas</span>
-              </div>
-            </article>
-          </div>
-        </section>
+      <section class="section">
+        <h2 class="section-title">Sistemas de gestão, auditorias e processos críticos</h2>
+        <p class="section-lead">
+          Além dos programas mensais, posso apoiar em temas específicos ligados a sistemas de gestão e processos críticos.
+        </p>
+        <div class="cards-row">
+          <article class="card">
+            <div class="card-label">ISO · SGI</div>
+            <h3 class="card-title">Auditoria Interna e Fortalecimento do Sistema de Gestão</h3>
+            <p class="card-sub">Prepare-se para auditorias externas sem surpresas e com ganho real de desempenho.</p>
+            <ul class="card-list">
+              <li>Planejamento e execução de auditorias internas (ISO 9001/14001/45001).</li>
+              <li>Relatório claro de achados e plano de ação.</li>
+              <li>Integração com programas de melhoria contínua.</li>
+            </ul>
+          </article>
 
-        <section class="section">
-          <div class="section-header">
-            <h2 class="section-title">Sistemas de gestão e auditorias</h2>
-            <span class="section-tag">ISO · SGI</span>
-          </div>
-          <div class="section-body">
-            <article class="service-card">
-              <header class="service-header">
-                <div>
-                  <div class="service-name">Auditoria Interna e Fortalecimento do Sistema de Gestão</div>
-                  <div class="service-line">ISO 9001 · 14001 · 45001 na prática.</div>
-                </div>
-                <span class="service-label">Projeto sob medida</span>
-              </header>
-              <p class="service-text">
-                Realizamos auditorias internas estruturadas, identificamos falhas reais do sistema e entregamos um plano de ações que reduz riscos em auditorias externas e melhora o desempenho diário.
-              </p>
-              <ul class="bullets">
-                <li>Planejamento de auditorias internas por processo e requisito.</li>
-                <li>Execução de auditorias (entrevistas, evidências, visitas a áreas).</li>
-                <li>Relatório claro de achados e plano de ação correspondente.</li>
-              </ul>
-              <div class="service-meta">
-                <span>Antes de auditorias externas</span>
-                <span>Integrável aos programas mensais</span>
-              </div>
-            </article>
+          <article class="card">
+            <div class="card-label">Engenharia</div>
+            <h3 class="card-title">Qualidade em Soldagem e Processos Críticos</h3>
+            <p class="card-sub">Reduza falhas, retrabalho e risco em campo em processos de alto impacto.</p>
+            <ul class="card-list">
+              <li>Diagnóstico técnico de soldagem e inspeções.</li>
+              <li>Ajustes em procedimentos e controles.</li>
+              <li>Plano de ações para aumentar a confiabilidade.</li>
+            </ul>
+          </article>
 
-            <article class="service-card">
-              <header class="service-header">
-                <div>
-                  <div class="service-name">Qualidade em Soldagem e Processos Críticos</div>
-                  <div class="service-line">Reduza falhas, retrabalho e risco em campo.</div>
-                </div>
-                <span class="service-label">Engenharia</span>
-              </header>
-              <p class="service-text">
-                Analisamos e otimizamos processos de soldagem e outros pontos críticos da produção, alinhando prática, normas e requisitos de clientes para aumentar a confiabilidade dos produtos.
-              </p>
-              <ul class="bullets">
-                <li>Diagnóstico técnico de processos de soldagem e inspeções.</li>
-                <li>Recomendações de ajustes em procedimentos e controles.</li>
-                <li>Plano de ações para reduzir falhas e retrabalho.</li>
-              </ul>
-              <div class="service-meta">
-                <span>Aplicável a fabricantes com soldagem</span>
-                <span>Pode ser integrado a projetos maiores</span>
-              </div>
-            </article>
-          </div>
-        </section>
+          <article class="card">
+            <div class="card-label">Equipe</div>
+            <h3 class="card-title">Treinamentos In Company</h3>
+            <p class="card-sub">Sua equipe falando a mesma língua em qualidade e processos.</p>
+            <ul class="card-list">
+              <li>ISO 9001/14001/45001 na prática.</li>
+              <li>Ferramentas da qualidade e Lean.</li>
+              <li>Formação de auditores internos.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
 
-        <section class="section">
-          <div class="section-header">
-            <h2 class="section-title">Formação da equipe</h2>
-            <span class="section-tag">Treinamentos in company</span>
-          </div>
-          <div class="section-body">
-            <article class="service-card">
-              <header class="service-header">
-                <div>
-                  <div class="service-name">Academia de Qualidade e Melhoria Contínua In Company</div>
-                  <div class="service-line">Sua equipe falando a mesma língua em qualidade e processos.</div>
-                </div>
-                <span class="service-label">1–2 dias</span>
-              </header>
-              <p class="service-text">
-                Treinamentos práticos, adaptados à realidade da sua empresa, para que a equipe entenda e aplique conceitos de ISO, ferramentas da qualidade e Lean no dia a dia, sem excesso de teoria.
-              </p>
-              <ul class="bullets">
-                <li>Sistemas de Gestão ISO (9001 / 14001 / 45001) na prática.</li>
-                <li>Ferramentas da qualidade e Lean para resolver problemas reais.</li>
-                <li>Formação de auditores internos com foco em agregar valor.</li>
-              </ul>
-              <div class="service-meta">
-                <span>Formatos de 1 ou 2 dias</span>
-                <span>Conteúdo adaptado aos seus processos</span>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section class="section">
-          <div class="section-header">
-            <h2 class="section-title">Sobre mim</h2>
-            <span class="section-tag">Experiência industrial</span>
-          </div>
-          <div class="section-body">
-            <p class="service-text">
-              Sou <span class="highlight">Lean Six Sigma Master Black Belt</span> e Lead Auditor para <span class="highlight">ISO 9001, 14001 e 45001</span>, com M.Sc. em Engenharia de Energia e experiência sólida em gestão da qualidade e melhoria de processos em ambientes industriais.
-            </p>
-            <p class="service-text" style="margin-top:6px;">
-              Atuei em funções de liderança de qualidade e engenharia, conduzindo projetos de otimização, implantação de sistemas de gestão e preparação para auditorias em empresas de diferentes portes. Trago essa experiência para apoiar PMEs industriais a construir sistemas de gestão mais fortes e operações mais estáveis.
-            </p>
-            <div class="pill-list">
-              <span class="pill">Lean Six Sigma Master Black Belt</span>
-              <span class="pill">Lead Auditor ISO 9001 · 14001 · 45001</span>
-              <span class="pill">Experiência em indústrias de manufatura</span>
-            </div>
-          </div>
-        </section>
-      </main>
+      <section class="section">
+        <h2 class="section-title">Sobre mim</h2>
+        <p class="section-lead">
+          Sou <span class="highlight">Lean Six Sigma Master Black Belt</span> e Lead Auditor para <span class="highlight">ISO 9001, 14001 e 45001</span>, com M.Sc. em Engenharia de Energia e experiência sólida em qualidade e processos industriais.
+        </p>
+        <p class="section-lead" style="margin-top:4px;">
+          Já atuei em funções de liderança de qualidade e engenharia, conduzindo projetos de otimização, implantação de sistemas de gestão e preparação para auditorias em empresas de diferentes portes.
+        </p>
+        <div class="pill-row">
+          <span class="pill">Lean Six Sigma Master Black Belt</span>
+          <span class="pill">Lead Auditor ISO 9001 · 14001 · 45001</span>
+          <span class="pill">Experiência em manufatura</span>
+        </div>
+      </section>
 
       <footer>
         <div class="footer-cta">
-          <span>Pronto para dar o próximo passo?</span>
+          <span>Quer conversar sobre a sua empresa?</span>
           <button>Agendar conversa de 30 minutos</button>
         </div>
-        <div>
-          Disponível para PMEs industriais em Hamm, Dortmund e região.
-        </div>
+        <div>Atuação focada em PMEs industriais em Hamm, Dortmund e região.</div>
       </footer>
     </div>
   </div>
