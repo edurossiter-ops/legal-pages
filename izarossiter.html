@@ -51,7 +51,7 @@
       border: 1px solid rgba(229, 229, 229, 0.9);
     }
 
-        header {
+     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -59,36 +59,36 @@
     }
     
     .brand {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
-    
-    /* logo IR */
-    .logo-box {
-      width: 80px;
-      height: 80px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .logo-img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-    
-    /* imagem com o nome */
-    .header-image-box {
-      max-width: 420px;      /* ajuste se quiser maior/menor */
-    }
-    
-    .header-img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* LOGO IR */
+.logo-box {
+  height: 80px;                 /* altura padrão */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-img {
+  height: 100%;                 /* ocupa a altura toda */
+  width: auto;                  /* largura ajusta sozinha */
+}
+
+/* IMAGEM COM O NOME */
+.header-image-box {
+  height: 80px;                 /* MESMA altura do logo */
+  display: flex;
+  align-items: center;
+}
+
+.header-img {
+  height: 100%;                 /* mesma altura */
+  width: auto;                  /* mantém proporção */
+  display: block;
+}
 
 
     .header-cta {
