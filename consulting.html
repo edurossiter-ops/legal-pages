@@ -10,6 +10,8 @@
       --accent: #2563eb;
       --accent-dark: #1d4ed8;
       --accent-soft: #dbeafe;
+      --gold: #f59e0b;
+      --gold-soft: #fef3c7;
       --text-main: #0f172a;
       --text-muted: #6b7280;
     }
@@ -102,7 +104,7 @@
       font-size: 52px;
       font-weight: 700;
       line-height: 1.04;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
       max-width: 980px;
     }
 
@@ -110,7 +112,7 @@
       font-size: 20px;
       color: var(--text-muted);
       max-width: 980px;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .hero-subtitle strong {
@@ -119,7 +121,10 @@
     }
 
     .hero-actions {
-      margin-bottom: 24px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     .btn-primary {
@@ -141,48 +146,67 @@
       background: linear-gradient(135deg, #1d4ed8, #1e40af);
     }
 
-   /* QUATRO PONTOS PRINCIPAIS – COM PROFUNDIDADE */
+    .hero-underline {
+      width: 120px;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--gold), #fbbf24);
+      margin-top: 8px;
+    }
 
-      .key-strip {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 16px;
-        margin-bottom: 40px;
-        background: transparent;
-        border: none;
-      }
-      
-      .key-item {
-        padding: 16px 16px 18px;
-        border-radius: 18px;
-        background: #ffffff;
-        border: 1px solid #e5e7eb;
-        box-shadow: 0 18px 48px rgba(15,23,42,0.16);
-        cursor: default;
-        transition: transform 0.18s ease-out, box-shadow 0.18s ease-out, border-color 0.18s ease-out;
-      }
-      
-      .key-item:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 28px 70px rgba(15,23,42,0.26);
-        border-color: #bfdbfe;
-      }
-      
-      .key-title {
-        font-size: 22px;
-        font-weight: 700;
-        color: #1d4ed8;
-        margin-bottom: 6px;
-      }
-      
-      .key-text {
-        font-size: 15px;
-        color: var(--text-main);
-        opacity: 0.9;
-      }
+    /* QUATRO PONTOS PRINCIPAIS – COM PROFUNDIDADE E TOQUE DOURADO */
 
+    .key-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      margin: 28px 0 40px;
+    }
 
-    /* SEÇÃO SERVIÇOS – TÍTULOS MAIS FORTES */
+    .key-item {
+      padding: 16px 16px 18px;
+      border-radius: 18px;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 18px 48px rgba(15,23,42,0.16);
+      cursor: default;
+      transition: transform 0.18s ease-out, box-shadow 0.18s ease-out, border-color 0.18s ease-out, background 0.18s ease-out;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .key-item::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 0 0, rgba(245,158,11,0.18), transparent 55%);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .key-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 28px 70px rgba(15,23,42,0.26);
+      border-color: #bfdbfe;
+      background: #f9fafb;
+    }
+
+    .key-title {
+      position: relative;
+      font-size: 22px;
+      font-weight: 700;
+      color: #1d4ed8;
+      margin-bottom: 6px;
+    }
+
+    .key-text {
+      position: relative;
+      font-size: 15px;
+      color: var(--text-main);
+      opacity: 0.9;
+    }
+
+    /* SEÇÃO SERVIÇOS */
 
     .section {
       margin-bottom: 32px;
@@ -217,6 +241,28 @@
       border: 1px solid #e5e7eb;
       padding: 14px 16px;
       box-shadow: 0 12px 34px rgba(148,163,184,0.25);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-block.gold {
+      border-color: rgba(245,158,11,0.5);
+      box-shadow: 0 18px 50px rgba(245,158,11,0.25);
+    }
+
+    .service-block.gold::before {
+      content: "Recomendado";
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: var(--gold-soft);
+      color: #92400e;
+      border: 1px solid rgba(245,158,11,0.6);
     }
 
     .service-title {
@@ -276,6 +322,12 @@
       border-radius: 999px;
       background: #e5e7eb;
       color: #4b5563;
+    }
+
+    .pill.gold {
+      background: var(--gold-soft);
+      color: #92400e;
+      border: 1px solid rgba(245,158,11,0.6);
     }
 
     footer {
@@ -347,6 +399,7 @@
         <div class="hero-actions">
           <button class="btn-primary">Agendar conversa de 30 minutos</button>
         </div>
+        <div class="hero-underline"></div>
       </section>
 
       <!-- QUATRO PONTOS PRINCIPAIS -->
@@ -377,7 +430,7 @@
         </p>
 
         <div class="services-grid">
-          <div class="service-block">
+          <div class="service-block gold">
             <div class="service-title">Programas de Melhoria Contínua (2 ou 4 dias/mês)</div>
             <p class="service-text">
               Construímos uma rotina simples de melhoria contínua na sua fábrica, com metas claras e foco nos problemas que mais doem.
@@ -443,7 +496,7 @@
           A consultoria é conduzida por um profissional com forte base técnica e experiência prática em ambientes industriais.
         </p>
         <div class="pill-row">
-          <span class="pill">Lean Six Sigma Master Black Belt</span>
+          <span class="pill gold">Lean Six Sigma Master Black Belt</span>
           <span class="pill">Lead Auditor ISO 9001 · 14001 · 45001</span>
           <span class="pill">M.Sc. em Engenharia de Energia</span>
           <span class="pill">International Welding Engineer</span>
