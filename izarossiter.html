@@ -51,22 +51,45 @@
       border: 1px solid rgba(229, 229, 229, 0.9);
     }
 
-    header {
+        header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 24px;
     }
-
-    .brand-image {
-      max-width: 520px;
+    
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 18px;
     }
-
-    .brand-image img {
+    
+    /* logo IR */
+    .logo-box {
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    
+    /* imagem com o nome */
+    .header-image-box {
+      max-width: 420px;      /* ajuste se quiser maior/menor */
+    }
+    
+    .header-img {
       width: 100%;
       height: auto;
       display: block;
     }
+
 
     .header-cta {
       display: flex;
@@ -497,8 +520,13 @@
   <div class="page">
     <div class="shell">
       <header>
-        <div class="brand-image">
-          <img src="iza-header.png" alt="Iza Rossiter Advocacia & Consultoria Jurídica">
+        <div class="brand">
+          <div class="logo-box">
+            <img src="iza-logo.png" alt="Logo Iza Rossiter" class="logo-img">
+          </div>
+          <div class="header-image-box">
+            <img src="iza-header.png" alt="Iza Rossiter Advocacia & Consultoria Jurídica" class="header-img">
+          </div>
         </div>
         <div class="header-cta">
           <div class="whatsapp-pill">
