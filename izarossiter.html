@@ -2,20 +2,20 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Iza Rossiter - Direito Internacional de Família & Saúde</title>
+  <title>Iza Rossiter - Direito Internacional de Família &amp; Saúde</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     :root {
-      --bg: #f5f5f7;
-      --bg-alt: #ffffff;
+      --bg: #ffffff;
+      --bg-alt: #fafafa;
       --primary: #c89b3c;
-      --primary-soft: #f4ebd7;
-      --text-main: #111827;
-      --text-muted: #6b7280;
-      --border-subtle: #e5e7eb;
+      --primary-soft: #f7efe0;
+      --text-main: #111111;
+      --text-muted: #7a7a7a;
+      --border-subtle: #e5e5e5;
       --radius-lg: 20px;
       --radius-full: 999px;
-      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.12);
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.08);
     }
 
     * {
@@ -25,8 +25,8 @@
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top left, #fdfcfb, #f5f5f7);
+      font-family: "Helvetica Neue", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #ffffff, #f5f5f5);
       color: var(--text-main);
       -webkit-font-smoothing: antialiased;
     }
@@ -35,20 +35,20 @@
       min-height: 100vh;
       display: flex;
       justify-content: center;
-      padding: 24px;
+      padding: 32px 16px;
     }
 
     .shell {
-      max-width: 1180px;
+      max-width: 1100px;
       width: 100%;
-      background: linear-gradient(135deg, #ffffff, #f8fafc);
+      background: #ffffff;
       border-radius: 32px;
       box-shadow: var(--shadow-soft);
       padding: 32px 32px 40px;
       display: flex;
       flex-direction: column;
       gap: 40px;
-      border: 1px solid rgba(148, 163, 184, 0.25);
+      border: 1px solid rgba(220, 220, 220, 0.9);
     }
 
     header {
@@ -65,18 +65,18 @@
     }
 
     .monogram {
-      width: 52px;
-      height: 52px;
+      width: 60px;
+      height: 60px;
       border-radius: 18px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
+      border: 1px solid rgba(200, 155, 60, 0.5);
       display: flex;
       align-items: center;
       justify-content: center;
-      background: radial-gradient(circle at 30% 0%, #f9fafb, #e5e7eb);
-      font-weight: 700;
+      background: linear-gradient(135deg, #ffffff, #f3e7d3);
+      font-weight: 600;
       letter-spacing: 0.08em;
-      font-size: 18px;
-      color: #9a7b33;
+      font-size: 20px;
+      color: #b18733;
     }
 
     .brand-text {
@@ -86,9 +86,10 @@
     }
 
     .brand-name {
-      font-size: 19px;
-      letter-spacing: 0.16em;
+      font-size: 20px;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
+      font-weight: 300;
     }
 
     .brand-tagline {
@@ -96,6 +97,7 @@
       text-transform: uppercase;
       letter-spacing: 0.16em;
       color: var(--text-muted);
+      font-weight: 300;
     }
 
     .header-cta {
@@ -138,6 +140,7 @@
       line-height: 1.1;
       letter-spacing: -0.04em;
       margin-bottom: 14px;
+      font-weight: 300;
     }
 
     .hero-subtitle {
@@ -146,6 +149,7 @@
       color: var(--text-muted);
       margin-bottom: 16px;
       max-width: 640px;
+      font-weight: 300;
     }
 
     .hero-extra {
@@ -163,8 +167,8 @@
 
     .btn-whatsapp {
       border: none;
-      background: radial-gradient(circle at 0 0, #6ee7b7, #10b981);
-      color: #ecfdf5;
+      background: linear-gradient(135deg, #d4a747, #b8872f);
+      color: #fffaf0;
       padding: 14px 26px;
       border-radius: 999px;
       font-size: 15px;
@@ -173,21 +177,21 @@
       align-items: center;
       gap: 10px;
       cursor: pointer;
-      box-shadow: 0 18px 35px rgba(16, 185, 129, 0.35);
+      box-shadow: 0 18px 35px rgba(184, 135, 47, 0.45);
       transform: translateY(0);
       transition: transform 0.13s ease, box-shadow 0.13s ease, filter 0.13s ease;
     }
 
     .btn-whatsapp:hover {
       transform: translateY(-1px);
-      box-shadow: 0 22px 45px rgba(16, 185, 129, 0.4);
+      box-shadow: 0 22px 45px rgba(184, 135, 47, 0.5);
       filter: brightness(1.04);
     }
 
     .btn-outline {
       border-radius: 999px;
       padding: 13px 22px;
-      border: 1px solid rgba(148, 163, 184, 0.8);
+      border: 1px solid rgba(122, 122, 122, 0.4);
       background: rgba(255, 255, 255, 0.9);
       font-size: 14px;
       color: var(--text-muted);
@@ -195,6 +199,12 @@
       align-items: center;
       gap: 8px;
       cursor: pointer;
+      transition: all 0.13s ease;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      background: var(--primary-soft);
     }
 
     .hero-meta {
@@ -215,7 +225,7 @@
       width: 5px;
       height: 5px;
       border-radius: 999px;
-      background: rgba(148, 163, 184, 0.9);
+      background: var(--primary);
     }
 
     .hero-photo-card {
@@ -223,8 +233,8 @@
       background: var(--bg-alt);
       border-radius: 26px;
       padding: 18px 18px 22px;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+      border: 1px solid rgba(229, 229, 229, 0.85);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
       overflow: hidden;
     }
 
@@ -232,15 +242,7 @@
       width: 100%;
       aspect-ratio: 4/5;
       border-radius: 20px;
-      background: linear-gradient(135deg, #e5e7eb, #cbd5f5);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #9ca3af;
-      font-size: 14px;
-      font-weight: 500;
-      text-align: center;
-      padding: 12px;
+      object-fit: cover;
     }
 
     .hero-chip {
@@ -249,7 +251,7 @@
       bottom: 24px;
       padding: 10px 14px;
       border-radius: 16px;
-      background: rgba(17, 24, 39, 0.9);
+      background: rgba(17, 17, 17, 0.92);
       color: #f9fafb;
       font-size: 13px;
       display: inline-flex;
@@ -271,8 +273,8 @@
     section {
       border-radius: 24px;
       padding: 24px 22px 22px;
-      background: rgba(248, 250, 252, 0.9);
-      border: 1px solid rgba(226, 232, 240, 0.85);
+      background: rgba(250, 250, 250, 0.8);
+      border: 1px solid rgba(229, 229, 229, 0.85);
     }
 
     section + section {
@@ -283,6 +285,7 @@
       font-size: 20px;
       margin-bottom: 10px;
       letter-spacing: -0.02em;
+      font-weight: 400;
     }
 
     section p {
@@ -301,10 +304,10 @@
     .pill {
       padding: 7px 13px;
       border-radius: 999px;
-      background: rgba(15, 23, 42, 0.04);
-      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(17, 17, 17, 0.04);
+      border: 1px solid rgba(122, 122, 122, 0.3);
       font-size: 13px;
-      color: #111827;
+      color: #111111;
     }
 
     .pill.accent {
@@ -324,11 +327,11 @@
       background: #ffffff;
       border-radius: 18px;
       padding: 18px 16px 16px;
-      border: 1px solid rgba(226, 232, 240, 0.9);
+      border: 1px solid rgba(229, 229, 229, 0.9);
       display: flex;
       flex-direction: column;
       gap: 8px;
-      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
     }
 
     .service-label {
@@ -394,7 +397,7 @@
       background: #ffffff;
       border-radius: 16px;
       padding: 14px 12px 13px;
-      border: 1px solid rgba(226, 232, 240, 0.9);
+      border: 1px solid rgba(229, 229, 229, 0.9);
       font-size: 13px;
       color: var(--text-muted);
       display: flex;
@@ -406,7 +409,7 @@
       width: 22px;
       height: 22px;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
+      border: 1px solid rgba(122, 122, 122, 0.5);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -417,7 +420,7 @@
 
     .step-title {
       font-weight: 600;
-      color: #111827;
+      color: #111111;
       font-size: 13px;
     }
 
@@ -427,13 +430,14 @@
       gap: 14px;
       padding: 20px 18px 16px;
       border-radius: 20px;
-      background: radial-gradient(circle at 0 0, #fefce8, #f9fafb);
-      border: 1px solid rgba(234, 179, 8, 0.5);
+      background: linear-gradient(135deg, #fefce8, #ffffff);
+      border: 1px solid rgba(200, 155, 60, 0.4);
     }
 
     .cta-final h3 {
       font-size: 18px;
       letter-spacing: -0.02em;
+      font-weight: 400;
     }
 
     .cta-final p {
@@ -468,6 +472,11 @@
     .footer-links a {
       color: var(--text-muted);
       text-decoration: none;
+      transition: color 0.13s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
     }
 
     @media (max-width: 960px) {
@@ -529,7 +538,7 @@
           <div class="monogram">IR</div>
           <div class="brand-text">
             <div class="brand-name">IZA ROSSITER</div>
-            <div class="brand-tagline">Advocacia & Consultoria Jurídica</div>
+            <div class="brand-tagline">Advocacia &amp; Consultoria Jurídica</div>
           </div>
         </div>
         <div class="header-cta">
@@ -542,7 +551,7 @@
 
       <main>
         <div class="hero-copy">
-          <h1>Advogada em Direito Internacional de Família & Saúde</h1>
+          <h1>Advogada em Direito Internacional de Família &amp; Saúde</h1>
           <div class="hero-subtitle">
             Especialista em casos transnacionais e planos de saúde, ajudando brasileiros que moram fora a resolver questões jurídicas entre Brasil e exterior com atendimento humanizado e estratégico.
           </div>
@@ -561,7 +570,7 @@
           <div class="hero-meta">
             <div class="meta-item">
               <span class="meta-dot"></span>
-              <span>Direito Internacional de Família & Saúde</span>
+              <span>Direito Internacional de Família &amp; Saúde</span>
             </div>
             <div class="meta-item">
               <span class="meta-dot"></span>
@@ -575,9 +584,7 @@
         </div>
 
         <div class="hero-photo-card">
-          <div class="hero-photo">
-            Substitua este bloco pela foto profissional da Dra. Iza.
-          </div>
+          <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/24df1051-2e00-4532-8000-ab9a08a063b2" alt="Dra. Iza Rossiter - Advogada especialista em Direito da Saúde" class="hero-photo">
           <div class="hero-chip">
             <span>Foco</span>
             <span>Brasileiros que vivem fora do Brasil</span>
@@ -588,7 +595,7 @@
       <section id="para-quem-e">
         <h2>Para quem é</h2>
         <p>
-          A atuação é voltada a brasileiros que moram no exterior e enfrentam situações em que as leis brasileiras e estrangeiras se cruzam, exigindo orientação especializada em Direito Internacional de Família & Saúde.
+          A atuação é voltada a brasileiros que moram no exterior e enfrentam situações em que as leis brasileiras e estrangeiras se cruzam, exigindo orientação especializada em Direito Internacional de Família &amp; Saúde.
         </p>
         <div class="pill-row">
           <div class="pill accent">Brasileiros expatriados com processos ou ações no Brasil</div>
@@ -602,7 +609,7 @@
       <section>
         <h2>Como a Dra. Iza pode ajudar</h2>
         <p>
-          A atuação une Direito Internacional de Família & Saúde, com foco em estratégias jurídicas pensadas para a realidade de quem mora fora do Brasil e não pode acompanhar tudo de perto.
+          A atuação une Direito Internacional de Família &amp; Saúde, com foco em estratégias jurídicas pensadas para a realidade de quem mora fora do Brasil e não pode acompanhar tudo de perto.
         </p>
         <div class="grid-services">
           <div class="service-card">
@@ -623,7 +630,7 @@
             <div class="service-label">Serviço 02</div>
             <div class="service-title">Direito da Saúde e Planos de Saúde</div>
             <div class="service-text">
-              Quando o plano diz “não” e você precisa de uma resposta jurídica segura.
+              Quando o plano diz "não" e você precisa de uma resposta jurídica segura.
             </div>
             <ul class="service-list">
               <li>Contestação de negativas de cobertura.</li>
@@ -654,7 +661,7 @@
             <div class="about-tag">Sobre a Dra. Iza Rossiter</div>
             <h2>Atendimento humanizado e estratégico para brasileiros que vivem fora</h2>
             <p>
-              Advogada atuante em Direito Internacional de Família & Saúde, especialista em casos transnacionais e planos de saúde. Oferece atendimento 100% online para brasileiros que moram fora do país e precisam resolver questões jurídicas envolvendo o Brasil e o exterior.
+              Advogada atuante em Direito Internacional de Família &amp; Saúde, especialista em casos transnacionais e planos de saúde. Oferece atendimento 100% online para brasileiros que moram fora do país e precisam resolver questões jurídicas envolvendo o Brasil e o exterior.
             </p>
             <p>
               Com experiência em casos que cruzam fronteiras, o foco é proporcionar um atendimento próximo: explicar com clareza, avaliar cenários possíveis e construir, junto com o cliente, o caminho jurídico mais adequado.
@@ -740,7 +747,7 @@
             </div>
           </div>
           <div>
-            &copy; <span id="year"></span> Iza Rossiter Advocacia & Consultoria Jurídica. Todos os direitos reservados.
+            &copy; <span id="year"></span> Iza Rossiter Advocacia &amp; Consultoria Jurídica. Todos os direitos reservados.
           </div>
         </footer>
       </section>
